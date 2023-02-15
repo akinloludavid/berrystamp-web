@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -10,8 +11,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { BsCheck2Circle } from "react-icons/bs";
+import { AiOutlineLike } from "react-icons/ai";
 import { nanoid } from "nanoid";
-import React, { useEffect, useState } from "react";
 import FeaturedCard from "../../components/FeaturedCard";
 import RecentCard from "../../components/RecentCard";
 import {
@@ -19,6 +21,9 @@ import {
   recentDesigns,
   userCoreFeatures,
 } from "../../utils/data";
+import { FiAward } from "react-icons/fi";
+
+import TestimonialCarousel from "../../components/carousels/TestimonialCarousel";
 
 const HomePage = () => {
   const animatedTexts = ["Buy Designs", "Customize Designs", "& Print Designs"];
@@ -131,10 +136,49 @@ const HomePage = () => {
           ))}
         </Grid>
       </Box>
-      <Box maxW={"1035px"} mx="auto" mt="96px">
+      <Box mx="auto" mt="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="32px">
           Shop via collection
         </Heading>
+        <Flex>
+          <Flex h={"100%"}>
+            <Flex gap="40px" h="100%">
+              <Flex flexDir={"column"} gap="16px">
+                <Image cursor={"pointer"} src="/assets/collection/icon1.png" />
+                <Image cursor={"pointer"} src="/assets/collection/icon2.png" />
+                <Image cursor={"pointer"} src="/assets/collection/icon3.png" />
+                <Image cursor={"pointer"} src="/assets/collection/icon4.png" />
+              </Flex>
+              <Box>
+                <Image src="/assets/collection/collection1.png" />
+              </Box>
+            </Flex>
+          </Flex>
+          <Flex
+            flexDir={"column"}
+            justify={"center"}
+            align="center"
+            bgColor={"#F9F6EC"}
+            px={["94px"]}
+          >
+            <Heading variant="h2" as="h2" textAlign={"center"}>
+              SHOP OUR COLLECTION DESIGN{" "}
+            </Heading>
+            <Text
+              variant={"body2"}
+              color="#757575"
+              my="12px"
+              textAlign={"center"}
+            >
+              Buy or customize any of our highly demanded collection design
+              Suitable on various items of your choice.
+            </Text>
+            <Text variant={"body2"} color="#323232" mb="24px">
+              Art by Namination
+            </Text>
+            <Button>Shop Design</Button>
+          </Flex>
+        </Flex>
       </Box>
       <Box maxW={"1035px"} mx="auto" mt="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="32px">
@@ -147,8 +191,12 @@ const HomePage = () => {
               px="24px"
               border="1px solid #e8e8e8"
               borderRadius={"12px"}
+              display="flex"
+              flexDir={"column"}
+              justifyContent={"center"}
+              alignItems="center"
             >
-              <Icon mb="24px" />
+              <Icon mb="24px" as={BsCheck2Circle} fontSize="32px" />
               <Heading variant={"h3"} mb="8px">
                 100% Safe payment
               </Heading>
@@ -164,12 +212,16 @@ const HomePage = () => {
               px="24px"
               border="1px solid #e8e8e8"
               borderRadius={"12px"}
+              display="flex"
+              flexDir={"column"}
+              justifyContent={"center"}
+              alignItems="center"
             >
-              <Icon mb="24px" />
+              <Icon mb="24px" as={AiOutlineLike} fontSize="32px" />
               <Heading variant={"h3"} mb="8px">
                 Escrow Policy{" "}
               </Heading>
-              <Text variant={"body2"}>
+              <Text variant={"body2"} textAlign="center">
                 Buy or request design customization to suit your prefrence
               </Text>
             </Box>
@@ -180,12 +232,16 @@ const HomePage = () => {
               px="24px"
               border="1px solid #e8e8e8"
               borderRadius={"12px"}
+              display="flex"
+              flexDir={"column"}
+              justifyContent={"center"}
+              alignItems="center"
             >
-              <Icon mb="24px" />
+              <Icon mb="24px" as={FiAward} fontSize="32px" />
               <Heading variant={"h3"} mb="8px">
                 Reliability
               </Heading>
-              <Text variant={"body2"}>
+              <Text variant={"body2"} textAlign="center">
                 We match your with our printers best suitable for the design
                 type.{" "}
               </Text>
@@ -195,6 +251,7 @@ const HomePage = () => {
       </Box>
       <Box
         mt="120px"
+        mb="120px"
         mx="auto"
         maxW={"783px"}
         px="94.5px"
@@ -228,6 +285,12 @@ const HomePage = () => {
             <Image cursor={"pointer"} src="/assets/apple-store.png" />
           </Flex>
         </Flex>
+      </Box>
+      <Box mb="100px">
+        <Heading as="h2" variant={"h2"} textAlign="center" mb="32px">
+          What our customers have to say{" "}
+        </Heading>
+        <TestimonialCarousel />
       </Box>
     </Box>
   );

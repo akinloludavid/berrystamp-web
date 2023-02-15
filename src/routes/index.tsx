@@ -10,7 +10,7 @@ export const AppRouteWrapper = () => {
 export const Pages = () => {
   return (
     <PageLayout>
-      <AppRouteWrapper />;
+      <AppRouteWrapper />
     </PageLayout>
   );
 };
