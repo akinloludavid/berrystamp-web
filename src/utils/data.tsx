@@ -22,11 +22,11 @@ export const navLinks = [
   },
   {
     label: "Sell your design",
-    route: "",
+    route: "/sell-your-design",
   },
   {
     label: "On-demand printer",
-    route: "",
+    route: "/on-demand-printer",
   },
 ];
 
@@ -141,5 +141,45 @@ export const featuredDesigns = [
     title: "Strong, able and fit design",
     price: "N3000",
     author: "Lami designs",
+  },
+];
+
+export const howItWorks = [
+  {
+    image: "/assets/vectors/cart.svg",
+    title: "Create your shop",
+    body: `Create an account and set up your shop on
+    our marketplace`,
+  },
+  {
+    image: "/assets/vectors/upload.svg",
+    title: "Upload design",
+    body: `Upload a picture mockup of your design on
+    your shop and it will be displayed`,
+  },
+  {
+    image: "/assets/vectors/file.svg",
+    title: "Earn Upon Purchase",
+    body: `Get paid each and every time your design
+    is ordered`,
+  },
+];
+export const painterProcess = [
+  {
+    image: "/assets/vectors/cart.svg",
+    title: "Create your Brand Profile",
+    body: `Create an account and set up your store on
+    our marketplace`,
+  },
+  {
+    image: "/assets/vectors/upload.svg",
+    title: "Accept Printing Offers",
+    body: `Get choosen or recommended to print buyers selected design `,
+  },
+  {
+    image: "/assets/vectors/file.svg",
+    title: " Earn upon purchase",
+    body: `Get paid each and every time your design 
+    is purchased`,
   },
 ];

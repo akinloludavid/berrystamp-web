@@ -9,7 +9,7 @@ const PageLayout = ({ children }: IChildren) => {
     <>
       <Topbar />
       <Navbar />
-      <Box maxW={"1440px"} px="96px">
+      <Box maxW={"1440px"} mx={"auto"} px="96px">
         {children}
       </Box>
 
