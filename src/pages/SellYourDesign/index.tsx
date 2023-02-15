@@ -102,24 +102,25 @@ const SellYourDesign = () => {
           </Text>
         </GridItem>
       </Grid>
-      <Flex
+      <Grid
         background="rgba(62, 47, 138, 0.08)"
         py="4.3rem"
-        px={"8rem"}
-        align={"center"}
-        gap={"5rem"}
+        px={"7rem"}
+        alignItems={"center"}
+        templateColumns="1fr 20rem"
+        gap={"2rem"}
       >
-        <Box maxW={"45rem"}>
+        <Box>
           <Heading variant={"h2"} fontWeight={"700"}>
             Join thousands of others artist on the platform today and start
             earning
           </Heading>
           <Button mt="2rem">Get Started</Button>
         </Box>
-        <Box>
-          <Image src="/assets/people.png" />
+        <Box width={"304px"} height={"311px"}>
+          <Image src="/assets/people.png" width={"304px"} height={"311px"} />
         </Box>
-      </Flex>
+      </Grid>
     </Box>
   );
 };

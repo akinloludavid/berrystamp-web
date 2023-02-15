@@ -1,32 +1,44 @@
+import {
+  CUSTOM_DESIGN,
+  HOME,
+  MARKET_PLACE,
+  MESSAGE,
+  ORDERS,
+  PRINTER,
+  SELL_DESIGNS,
+  TRACKING,
+} from "../routes/pathnames";
+
 export const navLinks = [
-  { label: "Home", route: "" },
+  { label: "Home", route: HOME },
   {
     label: "Market Place",
-    route: "",
+    route: MARKET_PLACE,
   },
   {
     label: "Custom design",
-    route: "",
+    route: CUSTOM_DESIGN,
   },
   {
     label: "Orders",
-    route: "",
+    route: ORDERS,
   },
   {
     label: "Message",
-    route: "",
+    route: MESSAGE,
   },
   {
     label: "Tracking",
-    route: "",
+    route: TRACKING,
   },
   {
     label: "Sell your design",
     route: "/sell-your-design",
   },
+
   {
     label: "On-demand printer",
-    route: "/on-demand-printer",
+    route: PRINTER,
   },
 ];
 
@@ -164,6 +176,50 @@ export const howItWorks = [
     is ordered`,
   },
 ];
+
+export const testimonials = [
+  {
+    image: "/assets/review/img1.png",
+    title: "Easy Process",
+    review: `I have been using inkstamp platform for
+            my printing on demand services. I love 
+            how easy the process is`,
+    author: "Bola",
+  },
+  {
+    image: "/assets/review/img2.png",
+    title: "Superb",
+    review: `Every thing I design on print I have ordered via inkstamp, comes out way better than my expectations`,
+    author: "Peter",
+  },
+  {
+    image: "/assets/review/img3.png",
+    title: "Solid Print",
+    review: `Very solid print on demand platform, I highly recommend`,
+    author: "Joan",
+  },
+  {
+    image: "/assets/review/img1.png",
+    title: "Easy Process",
+    review: `I have been using inkstamp platform for
+            my printing on demand services. I love 
+            how easy the process is`,
+    author: "Bola",
+  },
+  {
+    image: "/assets/review/img2.png",
+    title: "Superb",
+    review: `Every thing I design on print I have ordered via inkstamp, comes out way better than my expectations`,
+    author: "Peter",
+  },
+  {
+    image: "/assets/review/img3.png",
+    title: "Solid Print",
+    review: `Very solid print on demand platform, I highly recommend`,
+    author: "Joan",
+  },
+];
+
 export const painterProcess = [
   {
     image: "/assets/vectors/cart.svg",
