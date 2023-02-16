@@ -39,6 +39,7 @@ const TestimonialCarousel = () => {
         transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={() => slider?.slickPrev()}
+        cursor="pointer"
       >
         <BiLeftArrowAlt color="white" size="24px" />
       </Box>
@@ -54,6 +55,7 @@ const TestimonialCarousel = () => {
         transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={() => slider?.slickNext()}
+        cursor="pointer"
       >
         <BiRightArrowAlt color="white" size="24px" />
       </Box>
