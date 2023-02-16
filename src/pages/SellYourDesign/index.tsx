@@ -22,7 +22,7 @@ const SellYourDesign = () => {
   ];
   return (
     <Box>
-      <Flex align={"center"} gap={["7.375rem"]} mt={"2.1875rem"}>
+      <Flex align={"center"} gap={["7.375rem"]} mt={"2.1875rem"} px="96px">
         <Box maxW={["34.25rem"]}>
           <Heading as="h1" variant="h1">
             Do Your Digital Athestics & Get The Bag

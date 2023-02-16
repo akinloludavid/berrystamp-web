@@ -22,7 +22,7 @@ const OnDemandPrinter = () => {
   ];
   return (
     <Box>
-      <Flex align={"center"} gap={["7.375rem"]} mt={"2.1875rem"}>
+      <Flex align={"center"} gap={["7.375rem"]} mt={"2.1875rem"} px="96px">
         <Box maxW={["34.25rem"]}>
           <Heading as="h1" variant="h1">
             Bring To Life The Quality Of Design Asthetics
@@ -39,7 +39,7 @@ const OnDemandPrinter = () => {
           <Image src="/assets/webp/paint.webp" />
         </Box>
       </Flex>
-      <Box mt="108px" mb="96px">
+      <Box mt="108px" mb="96px" px="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="48px">
           How It Works
         </Heading>

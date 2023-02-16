@@ -41,7 +41,7 @@ const HomePage = () => {
   }, [textIndex]);
   return (
     <Box>
-      <Flex align={"center"}>
+      <Flex align={"center"} px="96px">
         <Box maxW={["516px"]}>
           <Heading as="h1" variant="h1">
             Nigeria’s No 1 Print On-demand site to
@@ -77,7 +77,7 @@ const HomePage = () => {
         </Box>
       </Flex>
 
-      <Box mt="108px" mb="96px">
+      <Box mt="108px" mb="96px" px="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="48px">
           How we operate
         </Heading>
@@ -118,7 +118,7 @@ const HomePage = () => {
           ))}
         </Grid>
       </Box>
-      <Box mx="auto" mt="96px">
+      <Box mx="auto" mt="96px" px="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="32px">
           Featured designs
         </Heading>
