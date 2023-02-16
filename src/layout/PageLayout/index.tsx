@@ -9,7 +9,7 @@ const PageLayout = ({ children }: IChildren) => {
     <Flex minH="100vh" flexDirection={"column"}>
       <Topbar />
       <Navbar />
-      <Box maxW={"1440px"} px="96px">
+      <Box maxW={"1440px"} mx={"auto"} px="96px">
         {children}
       </Box>
       <Box mt="auto">
