@@ -7,14 +7,31 @@ import {
   InputGroup,
   InputLeftElement,
   Text,
+  useDisclosure,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdOutlineShoppingCart, MdOutlineFavoriteBorder } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import BadgeComp from "../../components/BadgeComp";
 import Logo from "../../components/Logo";
+import Login from "../../pages/Auth/Login";
+import Register from "../../pages/Auth/Register";
 
 const Topbar = () => {
+  const navigate = useNavigate();
+  const {
+    isOpen: isLoginOpen,
+    onOpen: onLoginOpen,
+    onClose: OnLoginClose,
+  } = useDisclosure();
+  const {
+    isOpen: isRegisterOpen,
+    onOpen: onRegisterOpen,
+    onClose: OnRegisterClose,
+  } = useDisclosure();
+
   return (
     <>
       <Flex
@@ -64,6 +81,7 @@ const Topbar = () => {
             _hover={{}}
             fontSize="16px"
             fontWeight={"400"}
+            onClick={onLoginOpen}
           >
             Login
           </Button>
@@ -74,11 +92,14 @@ const Topbar = () => {
             _hover={{}}
             fontSize="16px"
             fontWeight={"400"}
+            onClick={onRegisterOpen}
           >
             Register
           </Button>
         </Flex>
       </Flex>
+      <Login isOpen={isLoginOpen} onClose={OnLoginClose} />
+      <Register isOpen={isRegisterOpen} onClose={OnRegisterClose} />
     </>
   );
 };

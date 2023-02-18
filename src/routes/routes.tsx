@@ -15,10 +15,8 @@ const SellYourDesignPage = WithSuspense(
 const OnDemandPrinterPage = WithSuspense(
   lazy(() => import("../pages/OnDemandPrinter"))
 );
-const LoginPage = WithSuspense(lazy(() => import("../pages/Auth/Login")));
 export const AppRoutes: IAppRoute[] = [
   { path: HOME, element: <HomePage /> },
   { path: SELL_LANDING_PAGE, element: <SellYourDesignPage /> },
   { path: ON_DEMAND_PRINTER, element: <OnDemandPrinterPage /> },
-  { path: LOGIN_PAGE, element: <LoginPage /> },
 ];
