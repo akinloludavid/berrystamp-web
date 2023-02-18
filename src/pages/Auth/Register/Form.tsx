@@ -1,4 +1,11 @@
-import { Button, FormControl, Input, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  Input,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 
 const Form = ({ type }: { type: number | null }) => {
@@ -57,9 +64,29 @@ const Form = ({ type }: { type: number | null }) => {
         </Text>
         <Input variant="outline" placeholder="Enter password" type="password" />
       </FormControl>
-      <Button mx={"auto"} display={"block"}>
-        Continue
-      </Button>
+      <Box style={{ gridColumn: "span 2" }}>
+        <Checkbox>Send updates and promtions to my email</Checkbox>
+
+        <Button mx={"auto"} display={"block"} mt={"2.5rem"}>
+          Continue
+        </Button>
+        <Text
+          variant={"body3"}
+          maxWidth={"27.5rem"}
+          mx={"auto"}
+          mt={"1rem"}
+          textAlign={"center"}
+        >
+          By signing up, you agree to our{" "}
+          <span style={{ color: "#0050BA", cursor: "pointer" }}>
+            terms of services
+          </span>{" "}
+          and that you have read our{" "}
+          <span style={{ color: "#0050BA", cursor: "pointer" }}>
+            privacy policy
+          </span>
+        </Text>
+      </Box>
     </form>
   );
 };
