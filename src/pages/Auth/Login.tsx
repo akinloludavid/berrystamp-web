@@ -16,7 +16,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo";
 
-const Login = ({ isOpen, onClose }: { isOpen: boolean; onClose: any }) => {
+const Login = ({
+  isOpen,
+  onClose,
+  signUp,
+}: {
+  isOpen: boolean;
+  onClose: any;
+  signUp: any;
+}) => {
   const navigate = useNavigate();
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -39,7 +47,7 @@ const Login = ({ isOpen, onClose }: { isOpen: boolean; onClose: any }) => {
             Don’t have an account?
             <span
               style={{ color: "#3E2F8A", cursor: "pointer" }}
-              onClick={() => navigate("register")}
+              onClick={signUp}
             >
               {" "}
               Sign up

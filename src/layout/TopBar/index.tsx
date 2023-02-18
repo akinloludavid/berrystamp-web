@@ -98,8 +98,22 @@ const Topbar = () => {
           </Button>
         </Flex>
       </Flex>
-      <Login isOpen={isLoginOpen} onClose={OnLoginClose} />
-      <Register isOpen={isRegisterOpen} onClose={OnRegisterClose} />
+      <Login
+        isOpen={isLoginOpen}
+        onClose={OnLoginClose}
+        signUp={() => {
+          OnLoginClose();
+          onRegisterOpen();
+        }}
+      />
+      <Register
+        isOpen={isRegisterOpen}
+        onClose={OnRegisterClose}
+        login={() => {
+          OnRegisterClose();
+          onLoginOpen();
+        }}
+      />
     </>
   );
 };

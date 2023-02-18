@@ -239,3 +239,24 @@ export const painterProcess = [
     is purchased`,
   },
 ];
+export const registerData = [
+  {
+    image: "/assets/cart.png",
+    title: "Sign up as a customer",
+    body: `Get 10% off your first
+    order
+    `,
+  },
+  {
+    image: "/assets/painter.png",
+    title: "Sign up as a designer",
+    body: `Set up your shop and
+    sell your designs`,
+  },
+  {
+    image: "/assets/shirt.png",
+    title: "Sign up as a printer",
+    body: `Sign up and get linked up
+    with customers`,
+  },
+];
