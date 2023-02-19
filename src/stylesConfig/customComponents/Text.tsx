@@ -25,6 +25,12 @@ export const TextStyle = {
       lineHeight: "18px",
       color: "#323232",
     },
+    body4: {
+      fontSize: "16px",
+      fontWeight: "400",
+      lineHeight: "18px",
+      color: "#323232",
+    },
   },
   // default values for `size` and `variant`
   defaultProps: {

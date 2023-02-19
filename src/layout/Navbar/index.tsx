@@ -14,6 +14,12 @@ const Navbar = () => {
       borderBottom={"1px solid #FCFCFC"}
       px="96px"
       mt="18px"
+      w="100%"
+      sx={{
+        "@media (max-width:767px)": {
+          display: "none",
+        },
+      }}
     >
       {navLinks.map((item) => (
         <Box

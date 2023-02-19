@@ -11,6 +11,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import React from "react";
+import MainContainer from "../../layout/MainContainer";
 import { painterProcess } from "../../utils/data";
 
 const OnDemandPrinter = () => {
@@ -22,7 +23,13 @@ const OnDemandPrinter = () => {
   ];
   return (
     <Box>
-      <Flex align={"center"} gap={["7.375rem"]} mt={"2.1875rem"} px="96px">
+      <MainContainer
+        display={"flex"}
+        alignItems={["", "", "", "flex-start", "center"]}
+        flexDir={["column", "column", "column", "row"]}
+        mt={["40px"]}
+        gap={["40px"]}
+      >
         <Box maxW={["34.25rem"]}>
           <Heading as="h1" variant="h1">
             Bring To Life The Quality Of Design Asthetics
@@ -33,19 +40,29 @@ const OnDemandPrinter = () => {
             seamless process by printing ordered designs.
           </Text>
           <Button mt="2rem">Let’s go</Button>
-          <Image src="/assets/vectors/hero-arrow.svg" ml="1.75rem" mt="40px" />
+          <Image
+            display={["none", "none", "none", "block"]}
+            src="/assets/vectors/hero-arrow.svg"
+            ml="1.75rem"
+            mt="40px"
+          />
         </Box>
         <Box>
           <Image src="/assets/webp/paint.webp" />
         </Box>
-      </Flex>
-      <Box mt="108px" mb="96px" px="96px">
+      </MainContainer>
+      <MainContainer mt="108px" mb="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="48px">
           How It Works
         </Heading>
-        <Flex
+        <Grid
+          templateColumns={[
+            "repeat(1,1fr)",
+            "repeat(2,1fr)",
+            "repeat(2,1fr)",
+            "repeat(3,1fr)",
+          ]}
           maxW={"1035px"}
-          justify={["space-between"]}
           mx="auto"
           gap={["60px"]}
         >
@@ -68,17 +85,19 @@ const OnDemandPrinter = () => {
               </Text>
             </Box>
           ))}
-        </Flex>
-      </Box>
-      <Grid templateColumns="repeat(5, 1fr)">
-        <GridItem colSpan={2} height={"100%"}>
+        </Grid>
+      </MainContainer>
+      <Grid
+        templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(5, 1fr)"]}
+      >
+        <GridItem colSpan={[1, 1, 2]} height={"100%"}>
           <Image src="/assets/webp/leaf.webp" height={"100%"} />
         </GridItem>
         <GridItem
-          colSpan={3}
+          colSpan={[1, 1, 3]}
           height={"100%"}
           background="rgba(62, 47, 138, 0.08)"
-          px="4.5rem"
+          px={["24px", "4.5rem"]}
           py="3rem"
         >
           <Heading variant="h2" pb={"1.5rem"} fontWeight={"700"}>
@@ -108,6 +127,7 @@ const OnDemandPrinter = () => {
           maxW={"52.125rem"}
           mx={"auto"}
           textAlign={"center"}
+          zIndex="999999"
         >
           Join thousands of others Printers on the platform today and start
           earning
@@ -118,20 +138,20 @@ const OnDemandPrinter = () => {
         <Image
           src="/assets/avatar1.png"
           position={"absolute"}
-          top={"7rem"}
+          top={["4rem", "7rem"]}
           left={"5rem"}
         />
         <Image
           src="/assets/avatar3.png"
           position={"absolute"}
-          top={"3.5rem"}
+          top={["2rem", "3.5rem"]}
           right={"25rem"}
         />
         <Image
           src="/assets/avatar4.png"
           position={"absolute"}
-          right={"7rem"}
-          top={"12.5rem"}
+          right={["2rem", "7rem"]}
+          top={["14rem", "12.5rem"]}
         />
         <Image
           src="/assets/avatar5.png"

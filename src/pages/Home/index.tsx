@@ -24,6 +24,7 @@ import {
 import { FiAward } from "react-icons/fi";
 
 import TestimonialCarousel from "../../components/carousels/TestimonialCarousel";
+import MainContainer from "../../layout/MainContainer";
 
 const HomePage = () => {
   const animatedTexts = ["Buy Designs", "Customize Designs", "& Print Designs"];
@@ -41,54 +42,80 @@ const HomePage = () => {
   }, [textIndex]);
   return (
     <Box>
-      <Flex align={"center"} px="96px">
-        <Box maxW={["516px"]}>
-          <Heading as="h1" variant="h1">
-            Nigeria’s No 1 Print On-demand site to
-          </Heading>
-          <Heading
-            as={motion.h1}
-            variant="h1"
-            backgroundImage={
-              "linear-gradient(180deg, #50139F 26.04%, #DB260E 90.1%)"
-            }
-            sx={{
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-            initial={{
-              y: 40,
-            }}
-            animate={{
-              y: 0,
-            }}
-          >
-            {animatedTexts[textIndex]}
-          </Heading>
-          <Text variant={"body1"} mt="16px">
-            Buy and customize stunning designs with premium printing services on
-            any desired item nation wide
-          </Text>
-          <Button mt="32px">Start Shopping</Button>
-          <Image src="/assets/hero-vector.png" ml="120px" mt="40px" />
-        </Box>
-        <Box>
-          <Image src="/assets/hero-img.png" />
-        </Box>
-      </Flex>
+      <MainContainer>
+        <Flex
+          align={["", "", "", "flex-start", "center"]}
+          flexDir={["column", "column", "column", "row"]}
+          mt={["40px"]}
+          gap={["40px"]}
+        >
+          <Box maxW={["100%", "100%", "100%", "516px"]}>
+            <Heading as="h1" variant={["h2", "h1"]}>
+              Nigeria’s No 1 Print On-demand site to
+            </Heading>
+            <Heading
+              as={motion.h1}
+              variant={["h2", "h1"]}
+              backgroundImage={
+                "linear-gradient(180deg, #50139F 26.04%, #DB260E 90.1%)"
+              }
+              sx={{
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+              initial={{
+                y: 40,
+              }}
+              animate={{
+                y: 0,
+              }}
+            >
+              {animatedTexts[textIndex]}
+            </Heading>
+            <Text variant={"body1"} mt="16px">
+              Buy and customize stunning designs with premium printing services
+              on any desired item nation wide
+            </Text>
+            <Button mt="32px">Start Shopping</Button>
+            <Image
+              src="/assets/hero-vector.png"
+              sx={{
+                "@media (max-width:992px)": {
+                  display: "none",
+                },
+              }}
+              width={["80%", "80%", "80%", "60%", "60%"]}
+              ml={["120px", "120px", "120px", "120px"]}
+              mt="40px"
+            />
+          </Box>
+          <Box w="fit-content">
+            <Image
+              src="/assets/hero-img.png"
+              // width={["auto", "80%", "80%", "60%", "100%"]}
+            />
+          </Box>
+        </Flex>
+      </MainContainer>
 
-      <Box mt="108px" mb="96px" px="96px">
+      <MainContainer mt="108px" mb="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="48px">
           How we operate
         </Heading>
         <Flex
           maxW={"1035px"}
+          flexDir={["column", "column", "column", "row"]}
           justify={["space-between"]}
           mx="auto"
           gap={["60px"]}
         >
           {userCoreFeatures.map((el) => (
-            <Box display="flex" flexDir={"column"} alignItems={"center"}>
+            <Box
+              display="flex"
+              flexDir={"column"}
+              alignItems={"center"}
+              key={nanoid()}
+            >
               <Image w={"40px"} src={el.image} alt={el.title} mb="29px" />
               <Heading variant={"h3"} as="h3" mb="8px">
                 {el.title}
@@ -99,33 +126,46 @@ const HomePage = () => {
             </Box>
           ))}
         </Flex>
-      </Box>
-      <Box maxW={"1035px"} mx="auto">
+      </MainContainer>
+      <MainContainer px="0" maxW={"1035px"} mx="auto">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="24px">
           Explore recent designs
         </Heading>
         <Grid
-          templateColumns={["repeat(3,1fr)"]}
+          templateColumns={[
+            "repeat(1,1fr)",
+            "repeat(2,1fr)",
+            "repeat(2,1fr)",
+            "repeat(3,1fr)",
+          ]}
           w="100%"
           mx="auto"
           rowGap={"57px"}
           columnGap="24px"
         >
           {recentDesigns.map((el) => (
-            <GridItem key={nanoid()}>
+            <GridItem key={nanoid()} mx={["auto", "auto", "0"]}>
               <RecentCard {...el} />
             </GridItem>
           ))}
         </Grid>
-      </Box>
-      <Box mx="auto" mt="96px" px="96px">
+      </MainContainer>
+      <MainContainer mx="auto" mt="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="32px">
           Featured designs
         </Heading>
         <Grid
-          templateColumns={["repeat(5,1fr)"]}
+          templateColumns={[
+            "repeat(2,1fr)",
+            "repeat(2,1fr)",
+
+            "repeat(2,1fr)",
+            "repeat(4,1fr)",
+            "repeat(5,1fr)",
+          ]}
           w="100%"
           mx="auto"
+          px="0px"
           rowGap={"57px"}
           columnGap="24px"
         >
@@ -135,19 +175,39 @@ const HomePage = () => {
             </GridItem>
           ))}
         </Grid>
-      </Box>
-      <Box mx="auto" mt="96px">
+      </MainContainer>
+      <MainContainer px="0px" mx="auto" mt="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="32px">
           Shop via collection
         </Heading>
-        <Flex>
+        <Flex flexDir={["column", "column", "row"]}>
           <Flex h={"100%"}>
-            <Flex gap="40px" h="100%">
-              <Flex flexDir={"column"} gap="16px">
-                <Image cursor={"pointer"} src="/assets/collection/icon1.png" />
-                <Image cursor={"pointer"} src="/assets/collection/icon2.png" />
-                <Image cursor={"pointer"} src="/assets/collection/icon3.png" />
-                <Image cursor={"pointer"} src="/assets/collection/icon4.png" />
+            <Flex gap="40px" h="100%" flexDir={["column", "column", "row"]}>
+              <Flex
+                flexDir={["row", "row", "column"]}
+                justify={["center", "center", "flex-start"]}
+                gap="16px"
+              >
+                <Image
+                  w={["48px", "48px", "auto"]}
+                  cursor={"pointer"}
+                  src="/assets/collection/icon1.png"
+                />
+                <Image
+                  w={["48px", "48px", "auto"]}
+                  cursor={"pointer"}
+                  src="/assets/collection/icon2.png"
+                />
+                <Image
+                  w={["48px", "48px", "auto"]}
+                  cursor={"pointer"}
+                  src="/assets/collection/icon3.png"
+                />
+                <Image
+                  w={["48px", "48px", "auto"]}
+                  cursor={"pointer"}
+                  src="/assets/collection/icon4.png"
+                />
               </Flex>
               <Box>
                 <Image src="/assets/collection/collection1.png" />
@@ -160,6 +220,7 @@ const HomePage = () => {
             align="center"
             bgColor={"#F9F6EC"}
             px={["94px"]}
+            py={["20px"]}
           >
             <Heading variant="h2" as="h2" textAlign={"center"}>
               SHOP OUR COLLECTION DESIGN{" "}
@@ -179,12 +240,20 @@ const HomePage = () => {
             <Button>Shop Design</Button>
           </Flex>
         </Flex>
-      </Box>
-      <Box maxW={"1035px"} mx="auto" mt="96px">
+      </MainContainer>
+      <MainContainer px="0px" maxW={"1035px"} mx="auto" mt="96px">
         <Heading as="h2" variant={"h2"} textAlign="center" mb="32px">
           Our promise to you
         </Heading>
-        <Grid templateColumns={"repeat(3,1fr)"} gap="16px">
+        <Grid
+          templateColumns={[
+            "repeat(1,1fr)",
+            "repeat(1,1fr)",
+            "repeat(3,1fr)",
+            "repeat(3,1fr)",
+          ]}
+          gap="16px"
+        >
           <GridItem>
             <Box
               py="57px"
@@ -248,13 +317,13 @@ const HomePage = () => {
             </Box>
           </GridItem>
         </Grid>
-      </Box>
+      </MainContainer>
       <Box
         mt="120px"
         mb="120px"
         mx="auto"
         maxW={"783px"}
-        px="94.5px"
+        px={["24px", "24px", "94.5px"]}
         borderRadius={"18px"}
         py="54px"
         bgColor={"#5E529E"}
@@ -280,7 +349,11 @@ const HomePage = () => {
           demand platform today
         </Text>
         <Flex>
-          <Flex mx="auto" gap="10px">
+          <Flex
+            mx="auto"
+            gap="10px"
+            flexDirection={["column", "column", "row"]}
+          >
             <Image cursor={"pointer"} src="/assets/google-play.png" />
             <Image cursor={"pointer"} src="/assets/apple-store.png" />
           </Flex>

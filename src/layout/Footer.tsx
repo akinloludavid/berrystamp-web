@@ -17,15 +17,20 @@ import {
 import { FiChevronRight } from "react-icons/fi";
 import { AiFillInstagram, AiFillFacebook } from "react-icons/ai";
 import { RiWhatsappFill } from "react-icons/ri";
+import MainContainer from "./MainContainer";
 const Footer = () => {
   return (
-    <Box bgColor={"#291F5C"} pb="36px">
+    <MainContainer bgColor={"#291F5C"} pb="36px">
       <Grid
-        templateColumns={"repeat(5,1fr)"}
+        templateColumns={[
+          "repeat(1,1fr)",
+          "repeat(2,1fr)",
+          "repeat(2,1fr)",
+          "repeat(5,1fr)",
+        ]}
         w="full"
-        px="187px"
         pt="32px"
-        gap={["96px"]}
+        gap={["24px", "24px", "48px", "96px"]}
       >
         <GridItem>
           <Heading
@@ -233,7 +238,7 @@ const Footer = () => {
           INKSTAMP {new Date().getFullYear()}. All Rights Reserved
         </Text>
       </Flex>
-    </Box>
+    </MainContainer>
   );
 };
 

@@ -6,7 +6,6 @@ export const MESSAGE = "/message";
 export const TRACKING = "/tracking";
 export const SELL_DESIGNS = "/sell";
 export const PRINTER = "/printer";
-
 export const LOGIN_PAGE = "/login";
 export const SIGNUP_PAGE = "/signup";
 export const SELL_LANDING_PAGE = "/sell-your-design";

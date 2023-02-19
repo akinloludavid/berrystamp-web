@@ -16,8 +16,8 @@ const BadgeComp = ({ count = 0, children, onClick }: IBadgeComp) => {
         alignItems="center"
         bgColor={"pryColor"}
         color="white"
-        w="16px"
-        h="16px"
+        w={["12px", "16px"]}
+        h={["12px", "16px"]}
         right="0"
         fontWeight={"400"}
         fontSize={"11px"}

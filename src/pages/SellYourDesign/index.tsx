@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Button,
@@ -10,7 +11,8 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import React from "react";
+import { nanoid } from "nanoid";
+import MainContainer from "../../layout/MainContainer";
 import { howItWorks } from "../../utils/data";
 
 const SellYourDesign = () => {
@@ -22,7 +24,13 @@ const SellYourDesign = () => {
   ];
   return (
     <Box>
-      <Flex align={"center"} gap={["7.375rem"]} mt={"2.1875rem"} px="96px">
+      <MainContainer
+        display={"flex"}
+        alignItems={["", "", "", "flex-start", "center"]}
+        flexDir={["column", "column", "column", "row"]}
+        mt={["40px"]}
+        gap={["40px"]}
+      >
         <Box maxW={["34.25rem"]}>
           <Heading as="h1" variant="h1">
             Do Your Digital Athestics & Get The Bag
@@ -39,47 +47,51 @@ const SellYourDesign = () => {
         <Box>
           <Image src="/assets/webp/paint-pencil.webp" />
         </Box>
-      </Flex>
-      <Box mt="108px" mb="96px">
-        <Heading as="h2" variant={"h2"} textAlign="center" mb="48px">
+      </MainContainer>
+      <MainContainer mt="108px" mb="96px">
+        <Heading as="h2" variant={"h2"} textAlign={["center"]} mb="48px">
           How It Works
         </Heading>
-        <Flex
+        <Grid
           maxW={"1035px"}
-          justify={["space-between"]}
+          templateColumns={[
+            "repeat(1,1fr)",
+            "repeat(2,1fr)",
+            "repeat(2,1fr)",
+            "repeat(3,1fr)",
+          ]}
           mx="auto"
           gap={["60px"]}
         >
           {howItWorks.map((el, index) => (
-            <Box
-              key={index}
-              display="flex"
-              flexDir={"column"}
-              alignItems={"center"}
-            >
-              <Image w={"40px"} src={el.image} alt={el.title} mb="29px" />
-              <Text variant={"body2"} textAlign={"center"} color="#5E529D">
-                Step {index + 1}
-              </Text>
-              <Heading variant={"h3"} as="h3" mb="8px">
-                {el.title}
-              </Heading>
-              <Text variant={"body2"} textAlign={"center"}>
-                {el.body}
-              </Text>
-            </Box>
+            <GridItem key={nanoid()}>
+              <Box display="flex" flexDir={"column"} alignItems={"center"}>
+                <Image w={"40px"} src={el.image} alt={el.title} mb="29px" />
+                <Text variant={"body2"} textAlign={"center"} color="#5E529D">
+                  Step {index + 1}
+                </Text>
+                <Heading variant={"h3"} as="h3" mb="8px">
+                  {el.title}
+                </Heading>
+                <Text variant={"body2"} textAlign={"center"}>
+                  {el.body}
+                </Text>
+              </Box>
+            </GridItem>
           ))}
-        </Flex>
-      </Box>
-      <Grid templateColumns="repeat(5, 1fr)">
-        <GridItem colSpan={2} height={"100%"}>
+        </Grid>
+      </MainContainer>
+      <Grid
+        templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(5, 1fr)"]}
+      >
+        <GridItem colSpan={[1, 1, 2]} height={"100%"}>
           <Image src="/assets/girl.png" height={"100%"} />
         </GridItem>
         <GridItem
-          colSpan={3}
+          colSpan={[1, 1, 3]}
           height={"100%"}
           background="rgba(255, 182, 182, 0.1)"
-          px="4.5rem"
+          px={["24px", "4.5rem"]}
           py="3rem"
         >
           <Heading variant="h2" pb={"1.5rem"} fontWeight={"700"}>
@@ -102,25 +114,29 @@ const SellYourDesign = () => {
           </Text>
         </GridItem>
       </Grid>
-      <Grid
-        background="rgba(62, 47, 138, 0.08)"
-        py="4.3rem"
-        px={"7rem"}
-        alignItems={"center"}
-        templateColumns="1fr 20rem"
-        gap={"2rem"}
-      >
-        <Box>
-          <Heading variant={"h2"} fontWeight={"700"}>
-            Join thousands of others artist on the platform today and start
-            earning
-          </Heading>
-          <Button mt="2rem">Get Started</Button>
-        </Box>
-        <Box width={"304px"} height={"311px"}>
-          <Image src="/assets/people.png" width={"304px"} height={"311px"} />
-        </Box>
-      </Grid>
+      <MainContainer background="rgba(62, 47, 138, 0.08)">
+        <Grid
+          py="4.3rem"
+          alignItems={"center"}
+          templateColumns={["repeat(1,1fr)", "repeat(2,1fr)"]}
+          gap={"2rem"}
+        >
+          <GridItem>
+            <Box>
+              <Heading variant={"h2"} fontWeight={"700"}>
+                Join thousands of others artist on the platform today and start
+                earning
+              </Heading>
+              <Button mt="2rem">Get Started</Button>
+            </Box>
+          </GridItem>
+          <GridItem>
+            <Box width={["100%", "100%", "304px"]} height={["100%", "311px"]}>
+              <Image src="/assets/people.png" width={"100%"} height={"100%"} />
+            </Box>
+          </GridItem>
+        </Grid>
+      </MainContainer>
     </Box>
   );
 };

@@ -1,7 +1,12 @@
 import { lazy } from "react";
 import WithSuspense from "../components/WithSuspense";
 import { IAppRoute } from "../types";
-import { HOME, ON_DEMAND_PRINTER, SELL_LANDING_PAGE } from "./pathnames";
+import {
+  HOME,
+  LOGIN_PAGE,
+  ON_DEMAND_PRINTER,
+  SELL_LANDING_PAGE,
+} from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
 const SellYourDesignPage = WithSuspense(
