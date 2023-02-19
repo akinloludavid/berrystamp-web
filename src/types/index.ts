@@ -16,3 +16,9 @@ export interface ITrendingCard {
   rating: string;
   isBookMarked: boolean;
 }
+
+export interface IModalProps {
+  onClose: () => void;
+  isOpen: boolean;
+  children?: React.ReactNode;
+}

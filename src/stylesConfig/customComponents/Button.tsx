@@ -15,7 +15,7 @@ export const ButtonStyles = {
       lineHeight: "24px",
       borderRadius: "10px",
       color: "#FDFDFD",
-      padding: "10px 20px",
+      // padding: "10px 20px",
       minWidth: "164px",
       _hover: {
         bg: "#342773",

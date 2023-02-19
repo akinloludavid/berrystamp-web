@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick.css";
 import { testimonials } from "../../utils/data";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { useState } from "react";
+import MainContainer from "../../layout/MainContainer";
 
 const TestimonialCarousel = () => {
   const [slider, setSlider] = useState<Slider | null>(null);
@@ -25,6 +26,20 @@ const TestimonialCarousel = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false,
+          centerPadding: "0px",
+          infinite: true,
+          autoplay: false,
+          dots: false,
+        },
+      },
+    ],
   };
   return (
     <Box position={"relative"} maxW={"1035px"} mx="auto">
@@ -60,6 +75,7 @@ const TestimonialCarousel = () => {
         <BiRightArrowAlt color="white" size="24px" />
       </Box>
       <Box
+        px={["24px", "24px", "0px"]}
         mx="auto"
         as={Slider}
         {...settings}
@@ -73,7 +89,9 @@ const TestimonialCarousel = () => {
             py="32px"
             px="28px"
             height={"258px"}
-            maxW="334px"
+            maxW={["auto", "auto", "334px"]}
+            w={["90%", "90%", "334px"]}
+            mx="auto"
             position="relative"
           >
             <Image src={el.image} mx="auto" />

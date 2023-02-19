@@ -12,15 +12,22 @@ import {
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { MdOutlineShoppingCart, MdOutlineFavoriteBorder } from "react-icons/md";
+import {
+  MdOutlineShoppingCart,
+  MdOutlineFavoriteBorder,
+  MdMenu,
+} from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import BadgeComp from "../../components/BadgeComp";
 import Logo from "../../components/Logo";
 import Login from "../../pages/Auth/Login";
 import Register from "../../pages/Auth/Register";
+import MainContainer from "../MainContainer";
+import MobileMenu from "../MobileMenu";
 
 const Topbar = () => {
   const navigate = useNavigate();
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const {
     isOpen: isLoginOpen,
     onOpen: onLoginOpen,
@@ -31,9 +38,15 @@ const Topbar = () => {
     onOpen: onRegisterOpen,
     onClose: OnRegisterClose,
   } = useDisclosure();
-
+  const handleSideMenu = () => {
+    setMenuOpen(true);
+  };
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+  };
   return (
     <>
+      <MobileMenu isOpen={isMenuOpen} onClose={handleMenuClose} />
       <Flex
         align={"center"}
         justify="center"
@@ -42,14 +55,27 @@ const Topbar = () => {
         bgImage={
           "linear-gradient(90.07deg, #5614B0 0%, rgba(219, 214, 92, 0.8) 100%)"
         }
+        w="100vw"
       >
         <Text fontWeight={"600"} fontSize="12px" color="#fff">
           10% percent discount on deliveries within lagos
         </Text>
       </Flex>
-      <Flex justify={"space-between"} align="center" h="" px={["96px"]}>
+      <MainContainer
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems="center"
+        h=""
+      >
         <Logo />
-        <InputGroup maxW={"773px"}>
+        <InputGroup
+          w={["100%", "100%", "773px"]}
+          sx={{
+            "@media (max-width:767px)": {
+              display: "none",
+            },
+          }}
+        >
           <InputLeftElement
             pointerEvents="none"
             children={<FiSearch color="#757575" />}
@@ -60,22 +86,33 @@ const Topbar = () => {
           <BadgeComp count={0}>
             <Icon
               as={IoMdNotificationsOutline}
-              fontSize={"32"}
+              fontSize={["24", "32"]}
               color="#808080"
             />
           </BadgeComp>
           <BadgeComp count={0}>
-            <Icon as={MdOutlineShoppingCart} fontSize={"32"} color="#808080" />
+            <Icon
+              as={MdOutlineShoppingCart}
+              fontSize={["24", "32"]}
+              color="#808080"
+            />
           </BadgeComp>
           <BadgeComp count={0}>
             <Icon
               as={MdOutlineFavoriteBorder}
-              fontSize={"32"}
+              fontSize={["24", "32"]}
               color="#808080"
             />
           </BadgeComp>
         </Flex>
-        <Flex align={"center"}>
+        <Flex
+          align={"center"}
+          sx={{
+            "@media (max-width:767px)": {
+              display: "none",
+            },
+          }}
+        >
           <Button
             variant={"ghost"}
             _hover={{}}
@@ -97,7 +134,27 @@ const Topbar = () => {
             Register
           </Button>
         </Flex>
-      </Flex>
+        <Icon
+          display={"block"}
+          sx={{
+            "@media (min-width:767px)": {
+              display: "none",
+            },
+          }}
+          as={MdMenu}
+          fontSize="36px"
+          onClick={handleSideMenu}
+        />
+      </MainContainer>
+      <MainContainer mt="20px">
+        <InputGroup w={["100%", "100%", "773px"]}>
+          <InputLeftElement
+            pointerEvents="none"
+            children={<FiSearch color="#757575" />}
+          />
+          <Input />
+        </InputGroup>
+      </MainContainer>
       <Login
         isOpen={isLoginOpen}
         onClose={OnLoginClose}

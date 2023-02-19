@@ -15,8 +15,8 @@ const FeaturedCard = ({ image, title, author, price }: IFeaturedCard) => {
         bgColor={"#E8E8E8"}
         borderTopStartRadius="6px"
         p="16px"
-        w="224px"
-        h="216px"
+        w={["100%", "224px"]}
+        h={["180px", "216px"]}
         mb="16px"
       >
         <Box
