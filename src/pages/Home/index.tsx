@@ -116,7 +116,13 @@ const HomePage = () => {
               alignItems={"center"}
               key={nanoid()}
             >
-              <Image w={"40px"} src={el.image} alt={el.title} mb="29px" />
+              <Image
+                w={"40px"}
+                h={"40px"}
+                src={el.image}
+                alt={el.title}
+                mb="29px"
+              />
               <Heading variant={"h3"} as="h3" mb="8px">
                 {el.title}
               </Heading>

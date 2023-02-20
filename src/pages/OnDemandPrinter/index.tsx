@@ -73,7 +73,13 @@ const OnDemandPrinter = () => {
               flexDir={"column"}
               alignItems={"center"}
             >
-              <Image w={"40px"} src={el.image} alt={el.title} mb="29px" />
+              <Image
+                w={"40px"}
+                h={"40px"}
+                src={el.image}
+                alt={el.title}
+                mb="29px"
+              />
               <Text variant={"body2"} textAlign={"center"} color="#5E529D">
                 Step {index + 1}
               </Text>
