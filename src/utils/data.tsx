@@ -246,17 +246,20 @@ export const registerData = [
     body: `Get 10% off your first
     order
     `,
+    role: "customer",
   },
   {
     image: "/assets/painter.png",
     title: "Sign up as a designer",
     body: `Set up your shop and
     sell your designs`,
+    role: "designer",
   },
   {
     image: "/assets/shirt.png",
     title: "Sign up as a printer",
     body: `Sign up and get linked up
     with customers`,
+    role: "printer",
   },
 ];

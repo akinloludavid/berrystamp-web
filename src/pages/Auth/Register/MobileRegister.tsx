@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { nanoid } from "nanoid";
@@ -6,13 +6,18 @@ import Logo from "../../../components/Logo";
 import ModalContainer from "../../../components/ModalContainer";
 import { registerData } from "../../../utils/data";
 import Form from "./Form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const MobileRegister = () => {
   const [type, setType] = useState<null | number>(null);
   const [stage, setStage] = useState<"type" | "form">("type");
   const navigate = useNavigate();
+  const [searchParam] = useSearchParams();
+  const currentStep = searchParam.get("as") || null;
 
+  useEffect(() => {
+    if (currentStep == null) setStage("type");
+  }, [currentStep]);
   return (
     <Flex
       flexDirection={"column"}
@@ -41,7 +46,10 @@ const MobileRegister = () => {
                 key={nanoid()}
                 border={"1px solid"}
                 borderColor={index == type ? "red" : "transparent"}
-                onClick={() => setType(index)}
+                onClick={() => {
+                  setType(index);
+                  navigate(`?as=${data.role}`);
+                }}
                 backgroundColor={"#F3F3F3"}
                 width={"100%"}
                 height={"5.625rem"}
