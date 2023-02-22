@@ -146,7 +146,7 @@ const Topbar = () => {
           onClick={handleSideMenu}
         />
       </MainContainer>
-      <MainContainer mt="20px">
+      <MainContainer mt="20px" display={["block", "block", "none", "none"]}>
         <InputGroup w={["100%", "100%", "773px"]}>
           <InputLeftElement
             pointerEvents="none"
