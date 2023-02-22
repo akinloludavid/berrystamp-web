@@ -12,8 +12,8 @@ const Register = ({
   login,
 }: {
   isOpen: boolean;
-  onClose: any;
-  login: any;
+  onClose?: any;
+  login?: any;
 }) => {
   const [type, setType] = useState<null | number>(null);
   const [stage, setStage] = useState<"type" | "form">("type");
@@ -91,7 +91,7 @@ const Register = ({
               Already have an account?
               <Text
                 as="span"
-                ml="10px"
+                ml="5px"
                 color="pryColor"
                 cursor={"pointer"}
                 onClick={login}
@@ -107,7 +107,7 @@ const Register = ({
               Already have an account?{" "}
               <Text
                 as="span"
-                ml="20px"
+                ml="5px"
                 color="pryColor"
                 cursor={"pointer"}
                 // sx={{ color: "#3E2F8A", cursor: "pointer", ml: "20px" }}
