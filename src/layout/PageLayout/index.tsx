@@ -6,7 +6,7 @@ import Topbar from "../TopBar";
 
 const PageLayout = ({ children }: IChildren) => {
   return (
-    <Box minH="100vh" w="100vw" flexDirection={"column"}>
+    <Flex minH="100vh" w="100vw" flexDirection={"column"}>
       <Topbar />
       <Navbar />
       <Box maxW={"1440px"} mx={"auto"}>
@@ -15,7 +15,7 @@ const PageLayout = ({ children }: IChildren) => {
       <Box mt="auto">
         <Footer />
       </Box>
-    </Box>
+    </Flex>
   );
 };
 
