@@ -614,5 +614,67 @@ export const itemsMoreDesign = [
     author: "Shemxy",
     title: "Fun and peaceful emotions",
     price: 5800,
+}
+]
+export const recentDesigns2 = [
+  {
+    image: "/assets/recent/img1.png",
+    title: "Mind serene space beauty",
+    author: "Deemdi Design",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img2.png",
+    title: "Fun and peaceful emotions",
+    author: "Shemxy",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img3.png",
+    title: "Minimal line flower wall art",
+    author: "Pandory Art",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img4.png",
+    title: "Minimal eccentric colour art",
+    author: "Folarin Design",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img5.png",
+    title: "Mind serene space beauty",
+    author: "Deemdi Design",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img6.png",
+    title: "Cute typograpghy art design",
+    author: "Deemdi",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img2.png",
+    title: "Fun and peaceful emotions",
+    author: "Shemxy",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img3.png",
+    title: "Minimal line flower wall art",
+    author: "Pandory Art",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img4.png",
+    title: "Minimal eccentric colour art",
+    author: "Folarin Design",
+    price: "N3000",
+  },
+  {
+    image: "/assets/recent/img6.png",
+    title: "Cute typograpghy art design",
+    author: "Deemdi",
+    price: "N3000",
   },
 ];
