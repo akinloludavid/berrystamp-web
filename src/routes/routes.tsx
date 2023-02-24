@@ -8,8 +8,6 @@ import CustomDesign from "../pages/CustomDesign";
 import { IAppRoute } from "../types";
 import {
   DESIGN_DETAILS,
-  HOME,
-  LOGIN_PAGE,
   MARKET_PLACE,
   CUSTOM_DESIGN,
   EXPLORE,
