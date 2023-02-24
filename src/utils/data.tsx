@@ -264,6 +264,358 @@ export const registerData = [
   },
 ];
 
+export const productCategories = [
+  {
+    label: "Clothing/Apparel",
+    value: "clothing",
+  },
+  {
+    label: "Facemask",
+    value: "facemask",
+  },
+  {
+    label: "Sticker",
+    value: "sticker",
+  },
+  {
+    label: "Phone Case",
+    value: "phonecase",
+  },
+  {
+    label: "Home/Living",
+    value: "home",
+  },
+  {
+    label: "Tote",
+    value: "tote",
+  },
+  {
+    label: "Kids",
+    value: "kids",
+  },
+  {
+    label: "Wall arts/Frames",
+    value: "frames",
+  },
+  {
+    label: "Accessory/Mugs",
+    value: "accessory",
+  },
+];
+
+export const designCategories = [
+  {
+    label: "Abstract",
+    value: "abstract",
+  },
+  {
+    label: "Minimalist",
+    value: "minimalist",
+  },
+  {
+    label: "Conceptual",
+    value: "conceptual",
+  },
+  {
+    label: "Fun and Casual",
+    value: "fun and casual",
+  },
+  {
+    label: "Typographic",
+    value: "typographic",
+  },
+  {
+    label: "Feminine",
+    value: "feminine",
+  },
+  {
+    label: "Masculine",
+    value: "masculine",
+  },
+  {
+    label: "Nature",
+    value: "nature",
+  },
+  {
+    label: "Kiddies",
+    value: "kiddies",
+  },
+];
+
+export const stockCategories = [
+  {
+    label: "Most Recent",
+    value: "recent",
+  },
+  {
+    label: "Best Seller",
+    value: "best-seller",
+  },
+  {
+    label: "Most popular",
+    value: "popular",
+  },
+  {
+    label: "Best deals",
+    value: "best-deals",
+  },
+];
+
+export const discountCategories = [
+  {
+    label: "10% Discount",
+    value: "0.1",
+  },
+  {
+    label: "20% Discount",
+    value: "0.2",
+  },
+  {
+    label: "30% Discount",
+    value: "0.3",
+  },
+  {
+    label: "40% Discount",
+    value: "0.4",
+  },
+  {
+    label: "50% Discount",
+    value: "0.5",
+  },
+];
+
+export const marketPlaceProducts = [
+  {
+    image: "/assets/market/img1.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    price: 5800,
+    title: "we-move",
+  },
+  {
+    image: "/assets/market/img2.png",
+    description: "Riri at it",
+    author: "Shemxy",
+    price: 5800,
+    title: "riri",
+  },
+  {
+    image: "/assets/market/img3.png",
+    description: "Black and beautiful ...",
+    author: "Altanta",
+    price: 3000,
+    title: "black-and-beautiful",
+  },
+  {
+    image: "/assets/market/img4.png",
+    description: "Black and beautiful ...",
+    author: "Shemxy",
+    price: 5800,
+    title: "black-and-beatiful",
+  },
+  {
+    image: "/assets/market/img5.png",
+    description: "Black and beautiful ...",
+    author: "Atlanta",
+    price: 5800,
+    title: "black-and-beatiful",
+  },
+  {
+    image: "/assets/market/img6.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    price: 5800,
+    title: "black-and-beatiful",
+  },
+  {
+    image: "/assets/market/img1.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    price: 5800,
+    title: "we-move",
+  },
+  {
+    image: "/assets/market/img2.png",
+    description: "Riri at it",
+    author: "Shemxy",
+    price: 5800,
+    title: "riri",
+  },
+  {
+    image: "/assets/market/img3.png",
+    description: "Black and beautiful ...",
+    author: "Altanta",
+    price: 3000,
+    title: "black-and-beatiful",
+  },
+  {
+    image: "/assets/market/img4.png",
+    description: "Black and beautiful ...",
+    author: "Shemxy",
+    price: 5800,
+    title: "black-and-beatiful",
+  },
+  {
+    image: "/assets/market/img5.png",
+    description: "Black and beautiful ...",
+    author: "Atlanta",
+    price: 5800,
+    title: "black-and-beatiful",
+  },
+  {
+    image: "/assets/market/img6.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "we-move",
+    price: 5800,
+  },
+];
+
+export const itemsDesign = [
+  {
+    image: "/assets/design/img1.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img2.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img3.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img4.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img5.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img1.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img2.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img3.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img4.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/img5.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+];
+
+export const itemsMoreDesign = [
+  {
+    image: "/assets/design/more/img1.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img2.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img3.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img4.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img5.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img1.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img2.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img3.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img4.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+  },
+  {
+    image: "/assets/design/more/img5.png",
+    description: "We meeuve slang ...",
+    author: "Shemxy",
+    title: "Fun and peaceful emotions",
+    price: 5800,
+}
+]
 export const recentDesigns2 = [
   {
     image: "/assets/recent/img1.png",
