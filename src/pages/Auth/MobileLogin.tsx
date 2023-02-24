@@ -16,7 +16,7 @@ const MobileLogin = () => {
   return (
     <Flex
       flexDirection={"column"}
-      width={"80%"}
+      width={["80%", "50%"]}
       mx={"auto"}
       pt={"1.56rem"}
       pb={"3.65rem"}

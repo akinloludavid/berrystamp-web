@@ -4,11 +4,16 @@ import Login from "../pages/Auth/Login";
 import MobileLogin from "../pages/Auth/MobileLogin";
 import Register from "../pages/Auth/Register";
 import MobileRegister from "../pages/Auth/Register/MobileRegister";
+import CustomDesign from "../pages/CustomDesign";
 import { IAppRoute } from "../types";
 import {
+  CUSTOM_DESIGN,
+  EXPLORE,
   HOME,
   LOGIN_PAGE,
+  MESSAGE,
   ON_DEMAND_PRINTER,
+  ORDERS,
   SELL_LANDING_PAGE,
   SIGNUP_PAGE,
 } from "./pathnames";
@@ -20,10 +25,17 @@ const SellYourDesignPage = WithSuspense(
 const OnDemandPrinterPage = WithSuspense(
   lazy(() => import("../pages/OnDemandPrinter"))
 );
+const Explore = WithSuspense(lazy(() => import("../pages/Explore")));
+const Orders = WithSuspense(lazy(() => import("../pages/Orders")));
+const Message = WithSuspense(lazy(() => import("../pages/Message")));
 export const AppRoutes: IAppRoute[] = [
   { path: HOME, element: <HomePage /> },
   { path: SELL_LANDING_PAGE, element: <SellYourDesignPage /> },
   { path: ON_DEMAND_PRINTER, element: <OnDemandPrinterPage /> },
   { path: LOGIN_PAGE, element: <MobileLogin /> },
   { path: SIGNUP_PAGE, element: <MobileRegister /> },
+  { path: MESSAGE, element: <Message /> },
+  { path: ORDERS, element: <Orders /> },
+  { path: CUSTOM_DESIGN, element: <CustomDesign /> },
+  { path: EXPLORE, element: <Explore /> },
 ];
