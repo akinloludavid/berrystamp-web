@@ -4,7 +4,7 @@ import NoOrder from "../../components/NoOrder";
 const Orders = () => {
   return (
     <div>
-      <NoOrder />
+      <NoOrder img="/assets/gifs/no-order-found.gif" />
     </div>
   );
 };

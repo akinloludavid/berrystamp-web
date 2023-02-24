@@ -1,4 +1,4 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ExploreCarousel from "./carousels/ExploreCarousel";
@@ -8,8 +8,14 @@ const NoMessage = () => {
 
   return (
     <Box minHeight={"70vh"}>
-      <Box maxWidth={"max-content"} mx={"auto"} mt={"7rem"}>
-        <Image src="/assets/gifs/" />
+      <Flex
+        flexDirection={"column"}
+        alignItems={"center"}
+        maxWidth={"max-content"}
+        mx={"auto"}
+        mt={"7rem"}
+      >
+        <Image src="/assets/gifs/chat.gif" />
         <Text variant={"body2"} fontWeight={"500"} mb={"13.1875rem"}>
           No messages found.{" "}
           <span
@@ -28,7 +34,7 @@ const NoMessage = () => {
           </span>{" "}
           an account to see all messages
         </Text>
-      </Box>
+      </Flex>
 
       <ExploreCarousel />
     </Box>

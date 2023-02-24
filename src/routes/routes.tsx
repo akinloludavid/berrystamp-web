@@ -4,8 +4,10 @@ import Login from "../pages/Auth/Login";
 import MobileLogin from "../pages/Auth/MobileLogin";
 import Register from "../pages/Auth/Register";
 import MobileRegister from "../pages/Auth/Register/MobileRegister";
+import CustomDesign from "../pages/CustomDesign";
 import Explore from "../pages/Explore";
 import Message from "../pages/Message";
+import Orders from "../pages/Orders";
 import { IAppRoute } from "../types";
 import {
   CUSTOM_DESIGN,
@@ -33,7 +35,7 @@ export const AppRoutes: IAppRoute[] = [
   { path: LOGIN_PAGE, element: <MobileLogin /> },
   { path: SIGNUP_PAGE, element: <MobileRegister /> },
   { path: MESSAGE, element: <Message /> },
-  { path: ORDERS, element: <Message /> },
-  { path: CUSTOM_DESIGN, element: <Message /> },
+  { path: ORDERS, element: <Orders /> },
+  { path: CUSTOM_DESIGN, element: <CustomDesign /> },
   { path: EXPLORE, element: <Explore /> },
 ];
