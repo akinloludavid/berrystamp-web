@@ -10,3 +10,5 @@ export const LOGIN_PAGE = "/login";
 export const SIGNUP_PAGE = "/register";
 export const SELL_LANDING_PAGE = "/sell-your-design";
 export const ON_DEMAND_PRINTER = "/printer";
+export const DESIGN_DETAILS = "/design/:designName";
+export const AUTHOR_DETAILS = "/author/:authorName";

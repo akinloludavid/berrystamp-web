@@ -6,6 +6,7 @@ import Register from "../pages/Auth/Register";
 import MobileRegister from "../pages/Auth/Register/MobileRegister";
 import { IAppRoute } from "../types";
 import {
+  DESIGN_DETAILS,
   HOME,
   LOGIN_PAGE,
   MARKET_PLACE,
@@ -22,6 +23,10 @@ const OnDemandPrinterPage = WithSuspense(
   lazy(() => import("../pages/OnDemandPrinter"))
 );
 const MarketPlace = WithSuspense(lazy(() => import("../pages/MarketPlace")));
+const DesignerDetails = WithSuspense(
+  lazy(() => import("../pages/DesignerDetails"))
+);
+
 export const AppRoutes: IAppRoute[] = [
   { path: HOME, element: <HomePage /> },
   { path: SELL_LANDING_PAGE, element: <SellYourDesignPage /> },
@@ -29,4 +34,5 @@ export const AppRoutes: IAppRoute[] = [
   { path: LOGIN_PAGE, element: <MobileLogin /> },
   { path: SIGNUP_PAGE, element: <MobileRegister /> },
   { path: MARKET_PLACE, element: <MarketPlace /> },
+  { path: DESIGN_DETAILS, element: <DesignerDetails /> },
 ];

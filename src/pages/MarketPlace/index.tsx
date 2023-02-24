@@ -21,7 +21,7 @@ import {
 import { nanoid } from "nanoid";
 import { CgMenuGridR } from "react-icons/cg";
 import { MdOutlineChevronRight, MdOutlineList } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MainContainer from "../../layout/MainContainer";
 import {
   designCategories,
@@ -31,6 +31,7 @@ import {
 } from "../../utils/data";
 
 const MarketPlace = () => {
+  const navigate = useNavigate();
   return (
     <Box w="100vw" mt="56px">
       <MainContainer px={["165px"]}>
@@ -191,7 +192,11 @@ const MarketPlace = () => {
             </Flex>
             <Grid gap={[6]} templateColumns={["repeat(4,1fr)"]}>
               {marketPlaceProducts.map((el) => (
-                <GridItem key={nanoid()} cursor="pointer">
+                <GridItem
+                  key={nanoid()}
+                  cursor="pointer"
+                  onClick={() => navigate(`/design/${el.title}`)}
+                >
                   <Box w={["181px"]}>
                     <Image
                       src={el.image}
@@ -207,7 +212,7 @@ const MarketPlace = () => {
                           color="#0050BA"
                           variant={"body3"}
                           as={Link}
-                          to={`/designers/${el.author}`}
+                          to={`/author/${el.author}`}
                         >
                           {el.author}
                         </Text>
