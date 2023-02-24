@@ -49,7 +49,7 @@ const ExploreCarousel = () => {
     ],
   };
   return (
-    <Box position={"relative"}>
+    <Box position={"relative"} mb={"69px"}>
       <Heading variant={"h3"} color={"#000"} textAlign={"center"}>
         Explore recent designs
       </Heading>
