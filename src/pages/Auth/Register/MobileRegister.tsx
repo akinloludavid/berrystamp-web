@@ -26,6 +26,7 @@ const MobileRegister = () => {
       pt={"1.56rem"}
       pb={"3.65rem"}
       alignItems={"center"}
+      minHeight={"70vh"}
     >
       <Heading variant="h2" mb={"1.5rem"} fontWeight={"700"}>
         Sign up
@@ -40,7 +41,7 @@ const MobileRegister = () => {
           >
             Create an account to access our services
           </Text>
-          <Flex gap={"0.5rem"} flexDirection={"column"}>
+          <Flex gap={"0.5rem"} flexDirection={["column", "row"]}>
             {registerData.map((data, index: number) => (
               <Flex
                 key={nanoid()}
