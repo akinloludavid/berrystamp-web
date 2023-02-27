@@ -18,6 +18,7 @@ import {
   ORDERS,
   SELL_LANDING_PAGE,
   SIGNUP_PAGE,
+  AUTHOR_DETAILS,
 } from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
@@ -31,10 +32,12 @@ const MarketPlace = WithSuspense(lazy(() => import("../pages/MarketPlace")));
 const DesignerDetails = WithSuspense(
   lazy(() => import("../pages/DesignerDetails"))
 );
-
 const Explore = WithSuspense(lazy(() => import("../pages/Explore")));
 const Orders = WithSuspense(lazy(() => import("../pages/Orders")));
 const Message = WithSuspense(lazy(() => import("../pages/Message")));
+const AuthorDetails = WithSuspense(
+  lazy(() => import("../pages/AuthorDetails"))
+);
 export const AppRoutes: IAppRoute[] = [
   { path: HOME, element: <HomePage /> },
   { path: SELL_LANDING_PAGE, element: <SellYourDesignPage /> },
@@ -47,4 +50,5 @@ export const AppRoutes: IAppRoute[] = [
   { path: ORDERS, element: <Orders /> },
   { path: CUSTOM_DESIGN, element: <CustomDesign /> },
   { path: EXPLORE, element: <Explore /> },
+  { path: AUTHOR_DETAILS, element: <AuthorDetails /> },
 ];
