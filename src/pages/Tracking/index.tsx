@@ -16,7 +16,13 @@ const Tracking = () => {
     navigate(`/tracking/${trackingId}`);
   };
   return (
-    <Flex justify={"center"} align="center" h="100%" my="117px" w={["576px"]}>
+    <Flex
+      justify={"center"}
+      align="center"
+      h="100%"
+      my="117px"
+      w={["100%", "100%", "100%", "576px"]}
+    >
       <Box w="100%" display={"flex"} flexDir="column">
         <FormControl mb="32px">
           <FormLabel fontSize={"16px"} fontWeight="600" mb="16px">
