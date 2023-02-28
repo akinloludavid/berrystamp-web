@@ -34,9 +34,9 @@ const MarketPlace = () => {
   const navigate = useNavigate();
   return (
     <Box w="100vw" mt="56px">
-      <MainContainer px={["165px"]}>
+      <MainContainer px={["24px", "40px", "80px", "80px", "165px"]}>
         <Flex gap="40px" w="100%">
-          <Box>
+          <Box display={["none", "none", "none", "block"]}>
             <Heading variant={"h2"} as="h2" mb={"8px"}>
               Marketplace
             </Heading>
@@ -190,19 +190,29 @@ const MarketPlace = () => {
                 </Select>
               </Flex>
             </Flex>
-            <Grid gap={[6]} templateColumns={["repeat(4,1fr)"]}>
+            <Grid
+              gap={[6]}
+              templateColumns={[
+                "repeat(2,1fr)",
+                "repeat(2,1fr)",
+                "repeat(3,1fr)",
+                "repeat(3,1fr)",
+
+                "repeat(4,1fr)",
+              ]}
+            >
               {marketPlaceProducts.map((el) => (
                 <GridItem
                   key={nanoid()}
                   cursor="pointer"
                   onClick={() => navigate(`/design/${el.title}`)}
                 >
-                  <Box w={["181px"]}>
+                  <Box w={["100%", "100%", "100%", "100%", "181px"]}>
                     <Image
                       src={el.image}
                       alt={el.description}
                       w={["100%"]}
-                      h={["240px"]}
+                      h={["auto", "240px"]}
                     />
                     <Box px={["16px"]} py={["22.5px"]}>
                       <Text variant={"body3"}>{el.description}</Text>

@@ -16,7 +16,7 @@ const Navbar = () => {
       mt="18px"
       w="100%"
       sx={{
-        "@media (max-width:767px)": {
+        "@media (max-width:991px)": {
           display: "none",
         },
       }}

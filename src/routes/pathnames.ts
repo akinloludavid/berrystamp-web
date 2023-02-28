@@ -4,6 +4,7 @@ export const ORDERS = "/orders";
 export const CUSTOM_DESIGN = "/custom-design";
 export const MESSAGE = "/message";
 export const TRACKING = "/tracking";
+export const TRACKING_DETAILS = "/tracking/:trackingId";
 export const SELL_DESIGNS = "/sell";
 export const PRINTER = "/printer";
 export const LOGIN_PAGE = "/login";

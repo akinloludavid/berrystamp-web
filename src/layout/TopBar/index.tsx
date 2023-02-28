@@ -79,7 +79,7 @@ const Topbar = () => {
         <InputGroup
           w={["100%", "100%", "50%"]}
           sx={{
-            "@media (max-width:767px)": {
+            "@media (max-width:991px)": {
               display: "none",
             },
           }}
@@ -130,7 +130,7 @@ const Topbar = () => {
           <Flex
             align={"center"}
             sx={{
-              "@media (max-width:767px)": {
+              "@media (max-width:991px)": {
                 display: "none",
               },
             }}
@@ -160,7 +160,7 @@ const Topbar = () => {
         <Icon
           display={"block"}
           sx={{
-            "@media (min-width:767px)": {
+            "@media (min-width:991px)": {
               display: "none",
             },
           }}
