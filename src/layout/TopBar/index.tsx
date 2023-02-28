@@ -20,14 +20,21 @@ import {
 import { useNavigate } from "react-router-dom";
 import BadgeComp from "../../components/BadgeComp";
 import Logo from "../../components/Logo";
+import ProfileDropdown from "../../components/ProfileDropdown";
 import Login from "../../pages/Auth/Login";
 import Register from "../../pages/Auth/Register";
+import {
+  BERRY_STAMP_USERKEY,
+  getLocalStorage,
+  handleLogout,
+} from "../../utils/helper";
 import MainContainer from "../MainContainer";
 import MobileMenu from "../MobileMenu";
 
 const Topbar = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const user = getLocalStorage(BERRY_STAMP_USERKEY);
   const {
     isOpen: isLoginOpen,
     onOpen: onLoginOpen,
@@ -44,6 +51,7 @@ const Topbar = () => {
   const handleMenuClose = () => {
     setMenuOpen(false);
   };
+
   return (
     <>
       <MobileMenu isOpen={isMenuOpen} onClose={handleMenuClose} />
@@ -69,9 +77,9 @@ const Topbar = () => {
       >
         <Logo />
         <InputGroup
-          w={["100%", "100%", "773px"]}
+          w={["100%", "100%", "50%"]}
           sx={{
-            "@media (max-width:767px)": {
+            "@media (max-width:991px)": {
               display: "none",
             },
           }}
@@ -105,39 +113,54 @@ const Topbar = () => {
             />
           </BadgeComp>
         </Flex>
-        <Flex
-          align={"center"}
-          sx={{
-            "@media (max-width:767px)": {
-              display: "none",
-            },
-          }}
-        >
-          <Button
-            variant={"ghost"}
-            _hover={{}}
-            fontSize="16px"
-            fontWeight={"400"}
-            onClick={onLoginOpen}
+        {user ? (
+          <Flex align={"center"} gap={2}>
+            <ProfileDropdown />
+            <Button
+              variant={"ghost"}
+              _hover={{}}
+              fontSize="16px"
+              fontWeight={"400"}
+              onClick={handleLogout}
+            >
+              Logout
+            </Button>
+          </Flex>
+        ) : (
+          <Flex
+            align={"center"}
+            sx={{
+              "@media (max-width:991px)": {
+                display: "none",
+              },
+            }}
           >
-            Login
-          </Button>
+            <Button
+              variant={"ghost"}
+              _hover={{}}
+              fontSize="16px"
+              fontWeight={"400"}
+              onClick={onLoginOpen}
+            >
+              Login
+            </Button>
 
-          <Box h="24px" w="2px" bg="#323232" />
-          <Button
-            variant={"ghost"}
-            _hover={{}}
-            fontSize="16px"
-            fontWeight={"400"}
-            onClick={onRegisterOpen}
-          >
-            Register
-          </Button>
-        </Flex>
+            <Box h="24px" w="2px" bg="#323232" />
+            <Button
+              variant={"ghost"}
+              _hover={{}}
+              fontSize="16px"
+              fontWeight={"400"}
+              onClick={onRegisterOpen}
+            >
+              Register
+            </Button>
+          </Flex>
+        )}
         <Icon
           display={"block"}
           sx={{
-            "@media (min-width:767px)": {
+            "@media (min-width:991px)": {
               display: "none",
             },
           }}

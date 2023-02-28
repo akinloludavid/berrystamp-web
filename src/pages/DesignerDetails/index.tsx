@@ -44,7 +44,7 @@ const DesignerDetails = () => {
         </Text>
       </Flex> */}
       <GoBack />
-      <Flex mt="16px" gap="48px">
+      <Flex mt="16px" gap="48px" flexDir={["column", "column", "row"]}>
         <Image
           w={["414px"]}
           src={designerDetails.image}
@@ -86,7 +86,12 @@ const DesignerDetails = () => {
         <Divider border="0.5px solid #757575" />
         <Grid
           mt="32px"
-          templateColumns={["repeat(5,1fr)"]}
+          templateColumns={[
+            "repeat(1,1fr)",
+            "repeat(2,1fr)",
+            "repeat(3,1fr)",
+            "repeat(5,1fr)",
+          ]}
           columnGap="13px"
           rowGap={"40px"}
           mb="54px"
@@ -107,7 +112,12 @@ const DesignerDetails = () => {
           More like this
         </Text>
         <Grid
-          templateColumns={["repeat(5,1fr)"]}
+          templateColumns={[
+            "repeat(1,1fr)",
+            "repeat(2,1fr)",
+            "repeat(3,1fr)",
+            "repeat(5,1fr)",
+          ]}
           columnGap="13px"
           rowGap={"40px"}
           mb="54px"

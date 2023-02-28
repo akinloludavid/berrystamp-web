@@ -6,7 +6,7 @@ interface IMainContainer extends BoxProps {
 }
 const MainContainer = ({ children, ...rest }: IMainContainer) => {
   return (
-    <Box px={["24px", "24px", "24px", "48px", "96px"]} w="100%" {...rest}>
+    <Box px={["24px", "24px", "24px", "48px", "96px"]} w="100vw" {...rest}>
       {children}
     </Box>
   );

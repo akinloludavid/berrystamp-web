@@ -16,7 +16,7 @@ const Navbar = () => {
       mt="18px"
       w="100%"
       sx={{
-        "@media (max-width:767px)": {
+        "@media (max-width:991px)": {
           display: "none",
         },
       }}
@@ -29,9 +29,19 @@ const Navbar = () => {
           justifyContent={"center"}
           alignItems="center"
           onClick={() => navigate(item.route)}
+          _hover={{
+            color: "red",
+          }}
           borderBottom={isNavActive(item.route) ? "2px solid #3E2F8A" : ""}
         >
-          <Text fontSize={"16px"} fontWeight="400" color="#323232">
+          <Text
+            _hover={{
+              color: "red",
+            }}
+            fontSize={"16px"}
+            fontWeight="400"
+            color="#323232"
+          >
             {item.label}
           </Text>
         </Box>

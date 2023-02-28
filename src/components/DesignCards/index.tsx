@@ -11,7 +11,12 @@ interface IDesignCard {
 const DesignCard = ({ image, title, author, price }: IDesignCard) => {
   return (
     <Box>
-      <Image mb="24px" src={image} borderRadius={"8px"} w="240px" h="240px" />
+      <Image
+        src={image}
+        borderRadius={"8px"}
+        w={["100%", "240px"]}
+        h={["auto", "240px"]}
+      />
       <Box pt={["24px"]} pb="20px" px="16px">
         <Text fontSize={"16px"} fontWeight="600" color="black" mb="4px">
           {title}

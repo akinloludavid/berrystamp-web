@@ -20,6 +20,8 @@ import {
   SIGNUP_PAGE,
   AUTHOR_DETAILS,
   COLLECTION_DETAILS,
+  TRACKING,
+  TRACKING_DETAILS,
 } from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
@@ -40,8 +42,13 @@ const AuthorDetails = WithSuspense(
   lazy(() => import("../pages/AuthorDetails"))
 );
 const CollectionDetails = WithSuspense(
-  lazy(() => import("../pages/CollectionDetails"))
+  lazy(() => import("../pages/AuthorDetails/CollectionDetails"))
 );
+const TrackingPage = WithSuspense(lazy(() => import("../pages/Tracking")));
+const TrackingDetailsPage = WithSuspense(
+  lazy(() => import("../pages/Tracking/TrackingDetails"))
+);
+
 export const AppRoutes: IAppRoute[] = [
   { path: HOME, element: <HomePage /> },
   { path: SELL_LANDING_PAGE, element: <SellYourDesignPage /> },
@@ -56,4 +63,6 @@ export const AppRoutes: IAppRoute[] = [
   { path: EXPLORE, element: <Explore /> },
   { path: AUTHOR_DETAILS, element: <AuthorDetails /> },
   { path: COLLECTION_DETAILS, element: <CollectionDetails /> },
+  { path: TRACKING, element: <TrackingPage /> },
+  { path: TRACKING_DETAILS, element: <TrackingDetailsPage /> },
 ];
