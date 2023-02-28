@@ -19,6 +19,7 @@ import {
   SELL_LANDING_PAGE,
   SIGNUP_PAGE,
   AUTHOR_DETAILS,
+  COLLECTION_DETAILS,
 } from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
@@ -38,6 +39,9 @@ const Message = WithSuspense(lazy(() => import("../pages/Message")));
 const AuthorDetails = WithSuspense(
   lazy(() => import("../pages/AuthorDetails"))
 );
+const CollectionDetails = WithSuspense(
+  lazy(() => import("../pages/CollectionDetails"))
+);
 export const AppRoutes: IAppRoute[] = [
   { path: HOME, element: <HomePage /> },
   { path: SELL_LANDING_PAGE, element: <SellYourDesignPage /> },
@@ -51,4 +55,5 @@ export const AppRoutes: IAppRoute[] = [
   { path: CUSTOM_DESIGN, element: <CustomDesign /> },
   { path: EXPLORE, element: <Explore /> },
   { path: AUTHOR_DETAILS, element: <AuthorDetails /> },
+  { path: COLLECTION_DETAILS, element: <CollectionDetails /> },
 ];

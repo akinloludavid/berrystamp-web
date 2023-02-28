@@ -614,8 +614,8 @@ export const itemsMoreDesign = [
     author: "Shemxy",
     title: "Fun and peaceful emotions",
     price: 5800,
-}
-]
+  },
+];
 export const recentDesigns2 = [
   {
     image: "/assets/recent/img1.png",
@@ -676,5 +676,33 @@ export const recentDesigns2 = [
     title: "Cute typograpghy art design",
     author: "Deemdi",
     price: "N3000",
+  },
+];
+
+export const collections = [
+  {
+    image: "/assets/artistcollection/mother.png",
+    design: 5,
+    title: "Motherhood Pride",
+  },
+  {
+    image: "/assets/artistcollection/plant.png",
+    design: 6,
+    title: "Plants n Nature",
+  },
+  {
+    image: "/assets/artistcollection/merry.png",
+    design: 10,
+    title: "Festivity",
+  },
+  {
+    image: "/assets/artistcollection/goofy.png",
+    design: 4,
+    title: "Goofy art",
+  },
+  {
+    image: "/assets/artistcollection/kindness.png",
+    design: 3,
+    title: "Quote Art",
   },
 ];
