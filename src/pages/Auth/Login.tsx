@@ -4,6 +4,7 @@ import {
   Checkbox,
   Flex,
   FormControl,
+  FormLabel,
   Heading,
   Input,
   Modal,
@@ -12,10 +13,11 @@ import {
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo";
 import ModalContainer from "../../components/ModalContainer";
+import { useLogin } from "../../services/query/user";
 
 const Login = ({
   isOpen,
@@ -26,7 +28,12 @@ const Login = ({
   onClose: any;
   signUp: any;
 }) => {
+  const { mutate: mutateLogin, isLoading: isLoginLoading } = useLogin();
   const navigate = useNavigate();
+  const handleLogin = (e: SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    mutateLogin({});
+  };
   return (
     <ModalContainer isOpen={isOpen} onClose={onClose}>
       <Flex
@@ -43,25 +50,24 @@ const Login = ({
         </Heading>
         <Text variant={"body4"} mt={"0.25rem"} mb={"2rem"}>
           Don’t have an account?
-          <span
-            style={{ color: "#3E2F8A", cursor: "pointer" }}
+          <Text
+            as="span"
+            color="pryColor"
+            variant={"body4"}
+            cursor={"pointer"}
             onClick={signUp}
           >
             {" "}
             Sign up
-          </span>
+          </Text>
         </Text>
-        <form action="" style={{ width: "100%" }}>
+        <form onSubmit={handleLogin} style={{ width: "100%" }}>
           <FormControl>
-            <Text mb="8px" variant={"body3"}>
-              Email
-            </Text>
+            <FormLabel mb="8px">Email</FormLabel>
             <Input variant="outline" placeholder="Enter email" type="email" />
           </FormControl>
           <FormControl mt={"1rem"}>
-            <Text mb="8px" variant={"body3"}>
-              Password
-            </Text>
+            <FormLabel mb="8px">Password</FormLabel>
             <Input
               variant="outline"
               placeholder="Enter password"
@@ -73,7 +79,12 @@ const Login = ({
             <Text flexGrow={"1"} />
             <Text variant={"body3"}>Forgot password?</Text>
           </Flex>
-          <Button mx={"auto"} display={"block"}>
+          <Button
+            type="submit"
+            mx={"auto"}
+            display={"block"}
+            isLoading={isLoginLoading}
+          >
             Login
           </Button>
         </form>

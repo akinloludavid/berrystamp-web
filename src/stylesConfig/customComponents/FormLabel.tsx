@@ -5,9 +5,9 @@ export const FormLabelStyle = {
   // styles for different visual variants ("outline", "solid")
   variants: {
     primary: {
-      fontWeight: 400,
       fontSize: "14px",
-      lineHeight: "17px",
+      fontWeight: "400",
+      lineHeight: "18px",
       color: "#323232",
     },
   },

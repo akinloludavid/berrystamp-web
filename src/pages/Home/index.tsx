@@ -41,7 +41,7 @@ const HomePage = () => {
     }, 1000);
   }, [textIndex]);
   return (
-    <Box>
+    <Box w="100vw">
       <MainContainer>
         <Flex
           align={["", "", "", "flex-start", "center"]}
@@ -49,7 +49,7 @@ const HomePage = () => {
           mt={["40px"]}
           gap={["40px"]}
         >
-          <Box maxW={["100%", "100%", "100%", "516px"]}>
+          <Box w={["100%", "100%", "100%", "516px"]}>
             <Heading as="h1" variant={["h2", "h1"]}>
               Nigeria’s No 1 Print On-demand site to
             </Heading>
@@ -123,7 +123,7 @@ const HomePage = () => {
                 alt={el.title}
                 mb="29px"
               />
-              <Heading variant={"h3"} as="h3" mb="8px">
+              <Heading variant={"h3"} as="h3" mb="8px" textAlign={"center"}>
                 {el.title}
               </Heading>
               <Text variant={"body2"} textAlign={"center"}>
@@ -133,7 +133,7 @@ const HomePage = () => {
           ))}
         </Flex>
       </MainContainer>
-      <MainContainer px="0" maxW={"1035px"} mx="auto">
+      <MainContainer>
         <Heading as="h2" variant={"h2"} textAlign="center" mb="24px">
           Explore recent designs
         </Heading>
@@ -144,8 +144,8 @@ const HomePage = () => {
             "repeat(2,1fr)",
             "repeat(3,1fr)",
           ]}
-          w="100%"
-          mx="auto"
+          // mx="auto"
+          maxW={["1035px"]}
           rowGap={"57px"}
           columnGap="24px"
         >
@@ -272,10 +272,10 @@ const HomePage = () => {
               alignItems="center"
             >
               <Icon mb="24px" as={BsCheck2Circle} fontSize="32px" />
-              <Heading variant={"h3"} mb="8px">
+              <Heading variant={"h3"} mb="8px" textAlign={"center"}>
                 100% Safe payment
               </Heading>
-              <Text variant={"body2"}>
+              <Text variant={"body2"} textAlign={"center"}>
                 Browse through thousands of designs of lovely designs on our
                 market place
               </Text>
