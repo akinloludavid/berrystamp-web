@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import GoBack from "./GoBack";
 
 const CollectionDetails = () => {
   const { collectionName } = useParams();
@@ -34,15 +35,12 @@ const CollectionDetails = () => {
         </Box>
         <p
           style={{
-            cursor: "pointer",
             position: "absolute",
             top: "0",
             right: "0",
-            color: "#0050BA",
           }}
-          onClick={() => navigate(-1)}
         >
-          Go Back
+          <GoBack />
         </p>
       </Flex>
 
@@ -84,7 +82,7 @@ const CollectionDetails = () => {
                   ₦3000
                 </Text>
               </Box>
-              <Button>Add to cart</Button>
+              <Button mx="16px">Add to cart</Button>
             </Box>
           ))}
       </Flex>
