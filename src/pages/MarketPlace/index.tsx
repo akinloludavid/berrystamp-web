@@ -33,7 +33,7 @@ import {
 const MarketPlace = () => {
   const navigate = useNavigate();
   return (
-    <Box w="100vw" mt="56px">
+    <Box mt="56px">
       <MainContainer px={["24px", "40px", "80px", "80px", "165px"]}>
         <Flex gap="40px" w="100%">
           <Box display={["none", "none", "none", "block"]}>

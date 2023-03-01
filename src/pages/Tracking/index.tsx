@@ -22,6 +22,7 @@ const Tracking = () => {
       h="100%"
       my="117px"
       w={["100%", "100%", "100%", "576px"]}
+      mx="auto"
     >
       <Box w="100%" display={"flex"} flexDir="column">
         <FormControl mb="32px">

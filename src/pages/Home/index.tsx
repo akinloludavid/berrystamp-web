@@ -41,7 +41,7 @@ const HomePage = () => {
     }, 1000);
   }, [textIndex]);
   return (
-    <Box w="100vw">
+    <Box>
       <MainContainer>
         <Flex
           align={["", "", "", "flex-start", "center"]}

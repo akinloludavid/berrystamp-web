@@ -33,7 +33,7 @@ const DesignerDetails = () => {
     (item) => item.title.toLowerCase() === designName?.toLowerCase()
   )[0];
   return (
-    <MainContainer w="100vw" mt="44px">
+    <MainContainer mt="44px">
       {/* <Flex align={"center"} gap="8px" mb="13px">
         <Text color="#757575" variant={"body3"}>
           Designers
