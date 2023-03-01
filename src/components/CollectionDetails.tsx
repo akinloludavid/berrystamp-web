@@ -1,13 +1,19 @@
 import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const CollectionDetails = () => {
   const { collectionName } = useParams();
-
+  const navigate = useNavigate();
   return (
     <Box>
-      <Flex flexWrap={"wrap"} alignItems={"flex-end"} gap={[3]} pb={"2.5rem"}>
+      <Flex
+        flexWrap={"wrap"}
+        alignItems={"flex-end"}
+        gap={[3]}
+        pb={"2.5rem"}
+        position={"relative"}
+      >
         <Image
           mb="1rem"
           src={"/assets/artistcollection/mother.png"}
@@ -24,15 +30,31 @@ const CollectionDetails = () => {
           <Text my={"4px"} variant={"body4"}>
             This collection is imspired by the strength of a woman
           </Text>
-          <Text>5 designs found in this collection</Text>
+          <Text variant={"body2"}>5 designs found in this collection</Text>
         </Box>
+        <p
+          style={{
+            cursor: "pointer",
+            position: "absolute",
+            top: "0",
+            right: "0",
+            color: "#0050BA",
+          }}
+          onClick={() => navigate(-1)}
+        >
+          Go Back
+        </p>
       </Flex>
 
       <Flex flexWrap={"wrap"} gap={[5]} pb={"14.9rem"}>
         {Array(5)
           .fill("")
           .map(() => (
-            <Box bg={"#FDFDFD"}>
+            <Box
+              bg={"#FDFDFD"}
+              pb={"1.1875rem"}
+              filter={"drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.05))"}
+            >
               <Image
                 mb="1rem"
                 src={"/assets/artistcollection/africanpride.png"}
