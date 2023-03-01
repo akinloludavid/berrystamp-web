@@ -41,9 +41,7 @@ const Message = WithSuspense(lazy(() => import("../pages/Message")));
 const AuthorDetails = WithSuspense(
   lazy(() => import("../pages/AuthorDetails"))
 );
-const CollectionDetails = WithSuspense(
-  lazy(() => import("../pages/AuthorDetails/CollectionDetails"))
-);
+
 const TrackingPage = WithSuspense(lazy(() => import("../pages/Tracking")));
 const TrackingDetailsPage = WithSuspense(
   lazy(() => import("../pages/Tracking/TrackingDetails"))
@@ -62,7 +60,7 @@ export const AppRoutes: IAppRoute[] = [
   { path: CUSTOM_DESIGN, element: <CustomDesign /> },
   { path: EXPLORE, element: <Explore /> },
   { path: AUTHOR_DETAILS, element: <AuthorDetails /> },
-  { path: COLLECTION_DETAILS, element: <CollectionDetails /> },
+  { path: COLLECTION_DETAILS, element: <AuthorDetails /> },
   { path: TRACKING, element: <TrackingPage /> },
   { path: TRACKING_DETAILS, element: <TrackingDetailsPage /> },
 ];
