@@ -129,6 +129,7 @@ const OrderDetails = ({ onClose, isOpen, children, title }: IOrderDetails) => {
             h="44px"
             bgColor={"#F2F2F2"}
             mt="30px"
+            mb="48px"
           >
             Mockups
           </Flex>
