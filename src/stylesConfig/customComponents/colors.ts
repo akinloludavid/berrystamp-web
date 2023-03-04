@@ -5,4 +5,5 @@ export const colors = {
   secBgColor: "#3E2F8A14",
   secColor: "#5a698f",
   white: "#ffffff",
+  danger: "#FF0022",
 };
