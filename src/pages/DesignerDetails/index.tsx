@@ -45,7 +45,12 @@ const DesignerDetails = () => {
       <Flex alignItems={"center"} fontSize={"14px"} pb={"1rem"}>
         Home <BiChevronRight /> {designName}
       </Flex>
-      <Flex mt="16px" gap="47px" flexDir={["column", "column", "row"]}>
+      <Flex
+        mt="16px"
+        mb={"96px"}
+        gap="47px"
+        flexDir={["column", "column", "row"]}
+      >
         <Box width={"529px"}>
           <Image
             w={["529px"]}
@@ -79,6 +84,7 @@ const DesignerDetails = () => {
             </Text>
           </Flex>
           <Flex mb="8px">
+            <Image src="/assets/vectors/lock.svg" />
             <Text variant={"body2"} color={"#000000"}>
               This design can only be printed by{" "}
             </Text>
@@ -273,7 +279,7 @@ const DesignerDetails = () => {
           </Flex>
         </Box>
       </Flex>
-      <Box mt="72px">
+      <Box mt="72px" pt={"2rem"} borderTop={"0.5px solid #D9D9D9"}>
         <MoreFromDesignerCarousel />
         <PeopleAlsoLikeCarousel />
       </Box>
