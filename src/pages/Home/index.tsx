@@ -144,7 +144,7 @@ const HomePage = () => {
             "repeat(2,1fr)",
             "repeat(3,1fr)",
           ]}
-          // mx="auto"
+          mx="auto"
           maxW={["1035px"]}
           rowGap={"57px"}
           columnGap="24px"
