@@ -72,7 +72,6 @@ const ExploreCarousel = () => {
             mx="auto"
             position="relative"
             cursor={"pointer"}
-            onClick={() => navigate("/explore")}
           >
             <FeaturedCard {...el} />
           </Box>

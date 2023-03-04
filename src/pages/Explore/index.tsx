@@ -21,7 +21,7 @@ import {
 
 const Explore = () => {
   return (
-    <section>
+    <Box>
       <MainContainer mx="auto" my="96px">
         <Flex gap={"3rem"} w="100%">
           <Image
@@ -123,7 +123,7 @@ const Explore = () => {
           ))}
         </Grid>
       </MainContainer>
-    </section>
+    </Box>
   );
 };
 

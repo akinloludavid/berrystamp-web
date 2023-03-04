@@ -28,12 +28,16 @@ import {
 } from "react-icons/io";
 import { BsFacebook } from "react-icons/bs";
 import { FaInstagramSquare } from "react-icons/fa";
-
+import PersonalCustomizationCard from "../../components/PersonalCustomizationCard";
 const DesignerDetails = () => {
   const { designName } = useParams();
   const designerDetails = marketPlaceProducts.filter(
     (item) => item.title.toLowerCase() === designName?.toLowerCase()
   )[0];
+  const useCase = marketPlaceProducts.filter(
+    (item) => item.title.toLowerCase() === designName?.toLowerCase()
+  )[0].usecase;
+
   const products = ["riri1.png", "riri2.png", "riri3.png", "riri4.png"];
   const colors = ["#000", "#fff", "#F4F3DF"];
   const [activeColor, setactiveColor] = useState(1);
@@ -114,131 +118,137 @@ const DesignerDetails = () => {
               />
             ))}
           </Flex>
-          <Text variant={"body2"} mt={"1.5rem"}>
-            <Text color={"#000"} as="span" variant={"body2"}>
-              Available quantity:{" "}
-            </Text>
-            475 piece available{" "}
-          </Text>
-          <Text
-            color={"#000"}
-            variant={"body2"}
-            mt={"1rem"}
-            mb={"12px"}
-            fontWeight={"600"}
-          >
-            Select Colour
-          </Text>
-          <Flex gap={"12px"}>
-            <Text as="span" variant={"body2"}>
-              Available colours:
-            </Text>
-            {colors.map((el, index) => (
-              <Box
-                borderRadius={activeColor == index ? "4px" : "0"}
-                width={"2rem"}
-                height={"2rem"}
-                bg={el}
-                border={"1.5px solid"}
-                borderColor={activeColor == index ? "red" : "transparent"}
-                cursor={"pointer"}
-                onClick={() => setactiveColor(index)}
-              ></Box>
-            ))}
-          </Flex>
-          <Text
-            color={"#000"}
-            variant={"body2"}
-            mt={"1rem"}
-            mb={"12px"}
-            fontWeight={"600"}
-          >
-            Select Size
-          </Text>
-          <Flex gap={"12px"}>
-            <Text as="span" variant={"body2"}>
-              Available sizes:
-            </Text>
-            {sizes.map((el, index) => (
-              <Flex
-                alignItems={"center"}
-                justifyContent={"center"}
-                width={"45.3px"}
-                height={"30.2px"}
-                bg={"#F7F7F7"}
-                borderRadius={"4px"}
-                border={"1.5px solid"}
-                borderColor={activesize == index ? "red" : "#C9C9C9"}
-                cursor={"pointer"}
-                onClick={() => setactivesize(index)}
+          {useCase == 1 ? (
+            <>
+              <Text variant={"body2"} mt={"1.5rem"}>
+                <Text color={"#000"} as="span" variant={"body2"}>
+                  Available quantity:{" "}
+                </Text>
+                475 piece available{" "}
+              </Text>
+              <Text
+                color={"#000"}
+                variant={"body2"}
+                mt={"1rem"}
+                mb={"12px"}
+                fontWeight={"600"}
               >
-                {el}
+                Select Colour
+              </Text>
+              <Flex gap={"12px"}>
+                <Text as="span" variant={"body2"}>
+                  Available colours:
+                </Text>
+                {colors.map((el, index) => (
+                  <Box
+                    borderRadius={activeColor == index ? "4px" : "0"}
+                    width={"2rem"}
+                    height={"2rem"}
+                    bg={el}
+                    border={"1.5px solid"}
+                    borderColor={activeColor == index ? "red" : "transparent"}
+                    cursor={"pointer"}
+                    onClick={() => setactiveColor(index)}
+                  ></Box>
+                ))}
               </Flex>
-            ))}
-          </Flex>
-          <Text
-            color={"#000"}
-            variant={"body2"}
-            mt={"1rem"}
-            mb={"12px"}
-            fontWeight={"600"}
-          >
-            Select Quantity
-          </Text>
-          <Flex gap={"7px"}>
-            <Flex
-              alignItems={"center"}
-              justifyContent={"center"}
-              width={"30px"}
-              height={"30px"}
-              bg={"#F7F7F7"}
-              borderRadius={"4px"}
-              border={"1px solid #C9C9C9"}
-              cursor={"pointer"}
-            >
-              -
-            </Flex>
-            <Flex
-              alignItems={"center"}
-              justifyContent={"center"}
-              width={"30px"}
-              height={"30px"}
-              bg={"#F7F7F7"}
-              borderRadius={"4px"}
-              border={"1px solid #C9C9C9"}
-            >
-              1
-            </Flex>
-            <Flex
-              alignItems={"center"}
-              justifyContent={"center"}
-              width={"30px"}
-              height={"30px"}
-              bg={"#F7F7F7"}
-              borderRadius={"4px"}
-              border={"1px solid #C9C9C9"}
-              cursor={"pointer"}
-            >
-              +
-            </Flex>
-          </Flex>
-          <Text variant={"body2"} mt={"0.75rem"}>
-            Your item order will be delivered within 5 days of payment
-          </Text>
-          <Flex gap={"1.5rem"} mt={"2rem"}>
-            <Button
-              width={"240px"}
-              height={"52px"}
-              color={"#3E2F8A"}
-              variant="outline"
-              border={"1px solid #3E2F8A"}
-            >
-              Add to cart
-            </Button>
-            <Button width={"240px"} height={"52px"}>
-              Print now
-            </Button>
-          </Flex>
+              <Text
+                color={"#000"}
+                variant={"body2"}
+                mt={"1rem"}
+                mb={"12px"}
+                fontWeight={"600"}
+              >
+                Select Size
+              </Text>
+              <Flex gap={"12px"}>
+                <Text as="span" variant={"body2"}>
+                  Available sizes:
+                </Text>
+                {sizes.map((el, index) => (
+                  <Flex
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    width={"45.3px"}
+                    height={"30.2px"}
+                    bg={"#F7F7F7"}
+                    borderRadius={"4px"}
+                    border={"1.5px solid"}
+                    borderColor={activesize == index ? "red" : "#C9C9C9"}
+                    cursor={"pointer"}
+                    onClick={() => setactivesize(index)}
+                  >
+                    {el}
+                  </Flex>
+                ))}
+              </Flex>
+              <Text
+                color={"#000"}
+                variant={"body2"}
+                mt={"1rem"}
+                mb={"12px"}
+                fontWeight={"600"}
+              >
+                Select Quantity
+              </Text>
+              <Flex gap={"7px"}>
+                <Flex
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  width={"30px"}
+                  height={"30px"}
+                  bg={"#F7F7F7"}
+                  borderRadius={"4px"}
+                  border={"1px solid #C9C9C9"}
+                  cursor={"pointer"}
+                >
+                  -
+                </Flex>
+                <Flex
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  width={"30px"}
+                  height={"30px"}
+                  bg={"#F7F7F7"}
+                  borderRadius={"4px"}
+                  border={"1px solid #C9C9C9"}
+                >
+                  1
+                </Flex>
+                <Flex
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  width={"30px"}
+                  height={"30px"}
+                  bg={"#F7F7F7"}
+                  borderRadius={"4px"}
+                  border={"1px solid #C9C9C9"}
+                  cursor={"pointer"}
+                >
+                  +
+                </Flex>
+              </Flex>
+              <Text variant={"body2"} mt={"0.75rem"}>
+                Your item order will be delivered within 5 days of payment
+              </Text>
+              <Flex gap={"1.5rem"} mt={"2rem"}>
+                <Button
+                  width={"240px"}
+                  height={"52px"}
+                  color={"#3E2F8A"}
+                  variant="outline"
+                  border={"1px solid #3E2F8A"}
+                >
+                  Add to cart
+                </Button>
+                <Button width={"240px"} height={"52px"}>
+                  Print now
+                </Button>
+              </Flex>
+            </>
+          ) : (
+            <PersonalCustomizationCard />
+          )}
           <Flex mt={"1rem"} alignItems={"center"} gap={"8px"}>
             <Text variant={"body2"}>Share this product:</Text>
             <Icon
