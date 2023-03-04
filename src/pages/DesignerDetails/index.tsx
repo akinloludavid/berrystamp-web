@@ -237,7 +237,7 @@ const DesignerDetails = () => {
             <Text variant={"body2"}>Share this product:</Text>
             <Icon
               borderRadius={"50%"}
-              border={"1px solid"}
+              border={"1px solid #3E2F8A"}
               p={"4px"}
               boxSizing="content-box"
               as={IoLogoWhatsapp}
@@ -246,7 +246,7 @@ const DesignerDetails = () => {
             />
             <Icon
               borderRadius={"50%"}
-              border={"1px solid"}
+              border={"1px solid #3E2F8A"}
               p={"4px"}
               color={"#1877F2"}
               boxSizing="content-box"
@@ -255,16 +255,15 @@ const DesignerDetails = () => {
             />
             <Icon
               borderRadius={"50%"}
-              border={"1px solid"}
+              border={"1px solid #3E2F8A"}
               p={"4px"}
-              color={"#FFDD55"}
               boxSizing="content-box"
               as={FaInstagramSquare}
               size={"12"}
             />
             <Icon
               borderRadius={"50%"}
-              border={"1px solid"}
+              border={"1px solid #3E2F8A"}
               p={"4px"}
               boxSizing="content-box"
               as={IoLogoTwitter}
