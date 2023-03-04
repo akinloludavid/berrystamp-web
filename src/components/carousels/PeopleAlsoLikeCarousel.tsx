@@ -17,7 +17,7 @@ import MainContainer from "../../layout/MainContainer";
 import FeaturedCard from "../FeaturedCard";
 import { useNavigate } from "react-router-dom";
 
-const ExploreCarousel = () => {
+const PeopleAlsoLikeCarousel = () => {
   const navigate = useNavigate();
   const [slider, setSlider] = useState<Slider | null>(null);
 
@@ -49,9 +49,9 @@ const ExploreCarousel = () => {
     ],
   };
   return (
-    <Box position={"relative"} mb={"69px"}>
+    <Box position={"relative"} my={"69px"}>
       <Heading variant={"h3"} color={"#000"} textAlign={"center"}>
-        Explore recent designs
+        People also like
       </Heading>
       <Box
         px={["24px", "24px", "0px"]}
@@ -72,6 +72,7 @@ const ExploreCarousel = () => {
             mx="auto"
             position="relative"
             cursor={"pointer"}
+            onClick={() => navigate("/explore")}
           >
             <FeaturedCard {...el} />
           </Box>
@@ -81,4 +82,4 @@ const ExploreCarousel = () => {
   );
 };
 
-export default ExploreCarousel;
+export default PeopleAlsoLikeCarousel;

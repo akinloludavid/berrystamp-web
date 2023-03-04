@@ -391,6 +391,7 @@ export const marketPlaceProducts = [
     author: "Shemxy",
     price: 5800,
     title: "we-move",
+    usecase: 1,
   },
   {
     image: "/assets/market/img2.png",
@@ -398,6 +399,7 @@ export const marketPlaceProducts = [
     author: "Shemxy",
     price: 5800,
     title: "riri",
+    usecase: 2,
   },
   {
     image: "/assets/market/img3.png",
