@@ -25,8 +25,10 @@ import { FiAward } from "react-icons/fi";
 
 import TestimonialCarousel from "../../components/carousels/TestimonialCarousel";
 import MainContainer from "../../layout/MainContainer";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const animatedTexts = ["Buy Designs", "Customize Designs", "& Print Designs"];
   const [textIndex, setTextIndex] = useState(0);
   useEffect(() => {
@@ -49,7 +51,7 @@ const HomePage = () => {
           mt={["40px"]}
           gap={["40px"]}
         >
-          <Box maxW={["100%", "100%", "100%", "516px"]}>
+          <Box w={["100%", "100%", "100%", "516px"]}>
             <Heading as="h1" variant={["h2", "h1"]}>
               Nigeria’s No 1 Print On-demand site to
             </Heading>
@@ -116,8 +118,14 @@ const HomePage = () => {
               alignItems={"center"}
               key={nanoid()}
             >
-              <Image w={"40px"} src={el.image} alt={el.title} mb="29px" />
-              <Heading variant={"h3"} as="h3" mb="8px">
+              <Image
+                w={"40px"}
+                h={"40px"}
+                src={el.image}
+                alt={el.title}
+                mb="29px"
+              />
+              <Heading variant={"h3"} as="h3" mb="8px" textAlign={"center"}>
                 {el.title}
               </Heading>
               <Text variant={"body2"} textAlign={"center"}>
@@ -127,7 +135,7 @@ const HomePage = () => {
           ))}
         </Flex>
       </MainContainer>
-      <MainContainer px="0" maxW={"1035px"} mx="auto">
+      <MainContainer>
         <Heading as="h2" variant={"h2"} textAlign="center" mb="24px">
           Explore recent designs
         </Heading>
@@ -138,15 +146,21 @@ const HomePage = () => {
             "repeat(2,1fr)",
             "repeat(3,1fr)",
           ]}
-          w="100%"
-          mx="auto"
+          // mx="auto"
+          maxW={["1035px"]}
           rowGap={"57px"}
           columnGap="24px"
         >
           {recentDesigns.map((el) => (
-            <GridItem key={nanoid()} mx={["auto", "auto", "0"]}>
-              <RecentCard {...el} />
-            </GridItem>
+            <Link to={"/explore"}>
+              <GridItem
+                key={nanoid()}
+                mx={["auto", "auto", "0"]}
+                cursor={"pointer"}
+              >
+                <RecentCard {...el} />
+              </GridItem>
+            </Link>
           ))}
         </Grid>
       </MainContainer>
@@ -266,10 +280,10 @@ const HomePage = () => {
               alignItems="center"
             >
               <Icon mb="24px" as={BsCheck2Circle} fontSize="32px" />
-              <Heading variant={"h3"} mb="8px">
+              <Heading variant={"h3"} mb="8px" textAlign={"center"}>
                 100% Safe payment
               </Heading>
-              <Text variant={"body2"}>
+              <Text variant={"body2"} textAlign={"center"}>
                 Browse through thousands of designs of lovely designs on our
                 market place
               </Text>

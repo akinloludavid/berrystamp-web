@@ -56,10 +56,26 @@ const MobileMenu = ({ isOpen, onClose }: IModalProps) => {
           </DrawerBody>
 
           <DrawerFooter display={"block"}>
-            <Button variant="secondary" w="100%" mb={3} onClick={onClose}>
+            <Button
+              variant="secondary"
+              w="100%"
+              mb={3}
+              onClick={() => {
+                navigate("/register");
+                onClose();
+              }}
+            >
               Register
             </Button>
-            <Button w="100%">Login</Button>
+            <Button
+              w="100%"
+              onClick={() => {
+                navigate("/login");
+                onClose();
+              }}
+            >
+              Login
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
