@@ -4,13 +4,14 @@ import {
   Grid,
   GridItem,
   Heading,
+  Icon,
   Image,
   Text,
 } from "@chakra-ui/react";
 import { nanoid } from "nanoid";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
 import DesignCard from "../../components/DesignCard";
 import FeaturedCard from "../../components/FeaturedCard";
-import HeartIcon from "../../components/vectors/HeartIcon";
 import MainContainer from "../../layout/MainContainer";
 import {
   featuredDesigns,
@@ -20,7 +21,7 @@ import {
 
 const Explore = () => {
   return (
-    <section>
+    <Box>
       <MainContainer mx="auto" my="96px">
         <Flex gap={"3rem"} w="100%">
           <Image
@@ -46,7 +47,11 @@ const Explore = () => {
               Shemxy
             </Text>
             <Flex alignItems={"center"} mt={"1rem"} gap={"1rem"}>
-              <HeartIcon />
+              <Icon
+                cursor={"pointer"}
+                as={MdOutlineFavoriteBorder}
+                fontSize="24px"
+              />{" "}
               <Image src={"/assets/vectors/share.svg"} alt="share-icon" />
             </Flex>
           </Box>
@@ -118,7 +123,7 @@ const Explore = () => {
           ))}
         </Grid>
       </MainContainer>
-    </section>
+    </Box>
   );
 };
 

@@ -10,14 +10,10 @@ import { nanoid } from "nanoid";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import { featuredDesigns, testimonials } from "../../utils/data";
-import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { useState } from "react";
-import MainContainer from "../../layout/MainContainer";
-import FeaturedCard from "../FeaturedCard";
 import { useNavigate } from "react-router-dom";
 
-const ExploreCarousel = () => {
+const ProductVariantCarousel = () => {
   const navigate = useNavigate();
   const [slider, setSlider] = useState<Slider | null>(null);
 
@@ -48,32 +44,43 @@ const ExploreCarousel = () => {
       },
     ],
   };
+  const products = [
+    "riri1.png",
+    "riri2.png",
+    "riri3.png",
+    "riri4.png",
+    "riri2.png",
+    "riri1.png",
+    "riri4.png",
+  ];
+
   return (
-    <Box position={"relative"} mb={"69px"}>
-      <Heading variant={"h3"} color={"#000"} textAlign={"center"}>
-        Explore recent designs
-      </Heading>
+    <Box position={"relative"} my={"30px"}>
       <Box
-        px={["24px", "24px", "0px"]}
         mx="auto"
         as={Slider}
         {...settings}
         ref={(slider: any) => setSlider(slider)}
       >
-        {featuredDesigns.map((el) => (
+        {products.map((el) => (
           <Box
             key={nanoid()}
             borderRadius={"8px"}
-            py="32px"
-            px="28px"
-            height={"258px"}
+            height={"120px"}
             maxW={["auto", "auto", "334px"]}
-            w={["90%", "90%", "334px"]}
-            mx="auto"
+            w={"120px"}
+            p={"8px"}
+            boxSizing="border-box"
             position="relative"
             cursor={"pointer"}
+            onClick={() => navigate("/")}
           >
-            <FeaturedCard {...el} />
+            <Image
+              w={["100px"]}
+              height={"100px"}
+              src={`/assets/riri/${el}`}
+              alt={el}
+            />
           </Box>
         ))}
       </Box>
@@ -81,4 +88,4 @@ const ExploreCarousel = () => {
   );
 };
 
-export default ExploreCarousel;
+export default ProductVariantCarousel;

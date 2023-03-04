@@ -25,8 +25,10 @@ import { FiAward } from "react-icons/fi";
 
 import TestimonialCarousel from "../../components/carousels/TestimonialCarousel";
 import MainContainer from "../../layout/MainContainer";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const animatedTexts = ["Buy Designs", "Customize Designs", "& Print Designs"];
   const [textIndex, setTextIndex] = useState(0);
   useEffect(() => {
@@ -150,9 +152,15 @@ const HomePage = () => {
           columnGap="24px"
         >
           {recentDesigns.map((el) => (
-            <GridItem key={nanoid()} mx={["auto", "auto", "0"]}>
-              <RecentCard {...el} />
-            </GridItem>
+            <Link to={"/explore"}>
+              <GridItem
+                key={nanoid()}
+                mx={["auto", "auto", "0"]}
+                cursor={"pointer"}
+              >
+                <RecentCard {...el} />
+              </GridItem>
+            </Link>
           ))}
         </Grid>
       </MainContainer>
