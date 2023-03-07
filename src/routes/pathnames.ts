@@ -15,3 +15,4 @@ export const DESIGN_DETAILS = "/design/:designName";
 export const AUTHOR_DETAILS = "/author/:authorName";
 export const EXPLORE = "/explore";
 export const COLLECTION_DETAILS = "/author/:authorName/:collectionName";
+export const NEW_CUSTOM_DESIGN = "/new-custom-design";

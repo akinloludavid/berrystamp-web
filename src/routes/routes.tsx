@@ -5,6 +5,7 @@ import MobileLogin from "../pages/Auth/MobileLogin";
 import Register from "../pages/Auth/Register";
 import MobileRegister from "../pages/Auth/Register/MobileRegister";
 import CustomDesign from "../pages/CustomDesign";
+import NewCustomDesign from "../pages/CustomDesign/NewCustomDesign";
 import { IAppRoute } from "../types";
 import {
   DESIGN_DETAILS,
@@ -22,6 +23,7 @@ import {
   COLLECTION_DETAILS,
   TRACKING,
   TRACKING_DETAILS,
+  NEW_CUSTOM_DESIGN,
 } from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
@@ -63,4 +65,5 @@ export const AppRoutes: IAppRoute[] = [
   { path: COLLECTION_DETAILS, element: <AuthorDetails /> },
   { path: TRACKING, element: <TrackingPage /> },
   { path: TRACKING_DETAILS, element: <TrackingDetailsPage /> },
+  { path: NEW_CUSTOM_DESIGN, element: <NewCustomDesign /> },
 ];
