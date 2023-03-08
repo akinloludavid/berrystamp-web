@@ -41,6 +41,8 @@ const CustomDesignCard = ({ name, img }: { name: string; img: string }) => {
         </Text>
         <Menu>
           <MenuButton
+            border={"none"}
+            height={"o.75rem"}
             as={IconButton}
             aria-label="Options"
             icon={<FiMoreHorizontal />}
