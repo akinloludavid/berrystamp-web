@@ -15,6 +15,7 @@
     "@fontsource/lato": "^4.5.10",
     "@reduxjs/toolkit": "^1.9.3",
     "@tanstack/react-query": "^4.24.10",
+    "formik": "^2.2.9",
     "framer-motion": "^8.2.4",
     "nanoid": "^4.0.1",
     "react": "^18.2.0",
@@ -24,7 +25,8 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",

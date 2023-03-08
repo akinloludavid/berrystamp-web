@@ -28,10 +28,11 @@ const primary = {
     border: "1px solid #C9C9C9",
     bgColor: "#EFEFEFCC",
     fontSize: "16px",
-    fontWeight: "300",
+    fontWeight: "400",
     height: "44px",
     w: ["100%"],
     color: "#323232",
+    padding: "10px 16px",
     _placeholder: {
       color: "#757575",
       fontSize: ["16px"],
@@ -50,6 +51,6 @@ export const InputStyles = {
     primary,
   },
   defaultProps: {
-    variant: "search",
+    variant: "primary",
   },
 };

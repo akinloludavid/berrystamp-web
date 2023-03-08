@@ -4,6 +4,7 @@ import { TextStyle as Text } from "./customComponents/Text";
 import { HeadingStyle as Heading } from "./customComponents/Heading";
 import { InputStyles as Input } from "./customComponents/Input";
 import { FormLabelStyle as FormLabel } from "./customComponents/FormLabel";
+import { DividerStyle as Divider } from "./customComponents/Divider";
 
 import { colors } from "./customComponents/colors";
 const components = {
@@ -12,6 +13,7 @@ const components = {
   Heading,
   Input,
   FormLabel,
+  Divider,
 };
 export const customTheme = extendTheme({
   fonts: {
