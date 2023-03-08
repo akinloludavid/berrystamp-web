@@ -24,3 +24,6 @@ export const getFilteredObjects = (
     );
   });
 };
+export const trauncateString = (word: string, length: number) => {
+  return word.length > length ? word.substring(0, length) + "..." : word;
+};
