@@ -15,8 +15,10 @@ import {
 import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineSettings } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const ProfileDropdown = () => {
+  const navigate = useNavigate();
   return (
     <Menu>
       <MenuButton cursor={"pointer"} as={Flex} rightIcon={<BsChevronDown />}>
@@ -55,7 +57,12 @@ const ProfileDropdown = () => {
           Switch to printer
         </MenuItem>
         <Divider />
-        <MenuItem display={"flex"} gap="2" fontSize={"14px"}>
+        <MenuItem
+          display={"flex"}
+          gap="2"
+          fontSize={"14px"}
+          onClick={() => navigate("/settings")}
+        >
           <Icon as={MdOutlineSettings} />
           Settings
         </MenuItem>
