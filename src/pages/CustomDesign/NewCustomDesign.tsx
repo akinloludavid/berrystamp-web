@@ -18,7 +18,9 @@ const NewCustomDesign = () => {
   return (
     <Box>
       <MainContainer mt={"35px"}>
-        <Text color={"#323232"}>What are you designing for?</Text>
+        <Text color={"#323232"} mb={"1.5rem"}>
+          What are you designing for?
+        </Text>
         <RadioGroup defaultValue="Birthday Ceremony">
           <Grid
             gridTemplateColumns={"repeat(4, 1fr)"}
@@ -64,8 +66,10 @@ const NewCustomDesign = () => {
             ))}
           </Grid>
         </RadioGroup>
-        <Button>Select designer</Button>
       </MainContainer>
+      <Button display={"block"} mx={"auto"} mt="93px" mb={"170px"}>
+        Select designer
+      </Button>
     </Box>
   );
 };
