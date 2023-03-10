@@ -7,11 +7,16 @@ import {
 } from "@chakra-ui/react";
 import { IModalProps } from "../../types";
 
-const ModalContainer = ({ isOpen, onClose, children }: IModalProps) => {
+const ModalContainer = ({
+  isOpen,
+  onClose,
+  children,
+  maxWidth,
+}: IModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent maxWidth={"52rem"} backgroundColor={"#fff"}>
+      <ModalContent maxWidth={maxWidth || "52rem"} backgroundColor={"#fff"}>
         <ModalCloseButton mt="-45px" mr="-18px" color="white" />
         {children}
       </ModalContent>
