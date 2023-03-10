@@ -1,10 +1,12 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { nanoid } from "nanoid";
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 import Account from "./Account";
 import Billing from "./Billing";
 import ChangePassword from "./ChangePassword";
 import EditProfile from "./EditProfile";
+import Email from "./Email";
+import Help from "./Help";
 const settings = [
   {
     label: "Edit profile",
@@ -33,11 +35,13 @@ const settings = [
 ];
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("edit");
-  const CurrentComp: any = {
+  const CurrentComp: Record<string, ReactElement> = {
     edit: <EditProfile />,
     my_account: <Account />,
     billing: <Billing />,
     change_password: <ChangePassword />,
+    email: <Email />,
+    help: <Help />,
   };
   return (
     <Flex

@@ -1,7 +1,7 @@
 export const DividerStyle = {
   // style object for base or default style
   baseStyle: {
-    outline: "none",
+    border: "1px solid red",
     _focus: { boxShadow: "none" },
   },
   // styles for different sizes ("sm", "md", "lg")
