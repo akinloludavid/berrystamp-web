@@ -113,6 +113,7 @@ const AuthorDetails = () => {
       >
         {["Design", "Collection"].map((tab, index) => (
           <Text
+            key={tab}
             color={index == activetab ? "#3E2F8A" : "gray"}
             pb={"0.5rem"}
             cursor={"pointer"}

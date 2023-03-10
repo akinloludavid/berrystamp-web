@@ -118,6 +118,7 @@ const Orders = () => {
               <Flex gap="8">
                 {orderStatuses.map((el) => (
                   <Box
+                    key={nanoid()}
                     position={"relative"}
                     cursor={"pointer"}
                     onClick={() => setOrderStatus(el.value)}
@@ -172,6 +173,7 @@ const Orders = () => {
                       fontWeight="500"
                       color="black"
                       textTransform={"capitalize"}
+                      key={nanoid()}
                     >
                       {item}
                     </Th>
