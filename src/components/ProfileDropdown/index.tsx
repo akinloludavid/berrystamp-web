@@ -22,44 +22,25 @@ import { MdOutlineSettings } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import ModalContainer from "../ModalContainer";
 import { nanoid } from "nanoid";
+import { followers } from "./data";
+import {
+  BERRY_STAMP_USERKEY,
+  getLocalStorage,
+  setLocalStorage,
+} from "../../utils/helper";
 
-const followers = [
-  {
-    name: "Bola Ola",
-    account_type: "Customer Account",
-    image: "/assets/followers/img1.png",
-  },
-  {
-    name: "Gina designs",
-    account_type: "Designer account",
-    image: "/assets/followers/img2.png",
-  },
-  {
-    name: "May Arts",
-    account_type: "Designer account",
-    image: "/assets/followers/img1.png",
-  },
-  {
-    name: "Falcon prints",
-    account_type: "Printer account",
-    image: "/assets/followers/img2.png",
-  },
-  {
-    name: "Apex prints",
-    account_type: "Printer account",
-    image: "/assets/followers/img1.png",
-  },
-  {
-    name: "Arts by shemxy",
-    account_type: "Designer account",
-    image: "/assets/followers/img2.png",
-  },
-];
 const ProfileDropdown = () => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleClose = () => {
     setIsModalOpen(false);
+  };
+  const user = getLocalStorage(BERRY_STAMP_USERKEY);
+  const handleSwitchToDesigner = () => {
+    setLocalStorage(BERRY_STAMP_USERKEY, { ...user, role: "designer" });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   };
   return (
     <>
@@ -134,7 +115,12 @@ const ProfileDropdown = () => {
             <Icon as={AiOutlineUser} />
             Accounts you follow
           </MenuItem>
-          <MenuItem display={"flex"} gap="2" fontSize={"14px"}>
+          <MenuItem
+            display={"flex"}
+            gap="2"
+            fontSize={"14px"}
+            onClick={handleSwitchToDesigner}
+          >
             <Icon as={AiOutlineUser} />
             Switch to designer
           </MenuItem>

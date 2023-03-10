@@ -10,6 +10,7 @@ import {
   RadioGroup,
   Text,
 } from "@chakra-ui/react";
+import { nanoid } from "nanoid";
 import React from "react";
 import MainContainer from "../../layout/MainContainer";
 import { designPurpose, designTheme, items } from "./data";
@@ -28,7 +29,7 @@ const NewCustomDesign = () => {
             rowGap={"1rem"}
           >
             {designPurpose.map((el) => (
-              <Radio colorScheme="purple" value={el}>
+              <Radio colorScheme="purple" value={el} key={nanoid()}>
                 {el}
               </Radio>
             ))}
@@ -44,7 +45,7 @@ const NewCustomDesign = () => {
             rowGap={"1rem"}
           >
             {items.map((el) => (
-              <Checkbox colorScheme="purple" value={el}>
+              <Checkbox key={nanoid()} colorScheme="purple" value={el}>
                 {el}
               </Checkbox>
             ))}
@@ -60,7 +61,7 @@ const NewCustomDesign = () => {
             rowGap={"1rem"}
           >
             {designTheme.map((el) => (
-              <Radio colorScheme="purple" value={el}>
+              <Radio key={nanoid()} colorScheme="purple" value={el}>
                 {el}
               </Radio>
             ))}

@@ -11,13 +11,18 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { IModalProps } from "../../types";
-import { navLinks } from "../../utils/data";
+import { navLinks } from "../Navbar/data";
 import { nanoid } from "nanoid";
-import { isNavActive } from "../../utils/helper";
+import {
+  BERRY_STAMP_USERKEY,
+  getLocalStorage,
+  isNavActive,
+} from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
 
 const MobileMenu = ({ isOpen, onClose }: IModalProps) => {
   const navigate = useNavigate();
+  const user = getLocalStorage(BERRY_STAMP_USERKEY);
   return (
     <>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>

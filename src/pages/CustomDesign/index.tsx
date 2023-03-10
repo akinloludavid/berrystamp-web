@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Heading } from "@chakra-ui/react";
+import { nanoid } from "nanoid";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CustomDesignCard from "../../components/CustomDesignCard";
@@ -32,7 +33,7 @@ const CustomDesign = () => {
             columnGap={"1.8125rem"}
           >
             {customdesigns.map((el) => (
-              <CustomDesignCard {...el} />
+              <CustomDesignCard key={nanoid()} {...el} />
             ))}
           </Flex>
         </Box>

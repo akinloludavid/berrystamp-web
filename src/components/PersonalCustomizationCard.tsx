@@ -12,6 +12,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import { nanoid } from "nanoid";
 import React, { useState } from "react";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import ModalContainer from "./ModalContainer";
@@ -106,6 +107,7 @@ const PersonalCustomizationCard = () => {
                 </Text>
                 {sizes.map((el, index) => (
                   <Flex
+                    key={nanoid()}
                     alignItems={"center"}
                     justifyContent={"center"}
                     width={"45.3px"}
