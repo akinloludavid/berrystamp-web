@@ -1,16 +1,18 @@
-export const FormLabelStyle = {
+export const DividerStyle = {
   // style object for base or default style
+  baseStyle: {
+    border: "1px solid red",
+    _focus: { boxShadow: "none" },
+  },
   // styles for different sizes ("sm", "md", "lg")
   sizes: {},
   // styles for different visual variants ("outline", "solid")
   variants: {
-    primary: {
-      fontSize: "14px",
-      fontWeight: "600",
-      lineHeight: "18px",
-      color: "#323232",
-    },
+    primary: (props: any) => ({
+      border: "0.5px solid #D9D9D9",
+    }),
   },
+
   // default values for `size` and `variant`
   defaultProps: {
     variant: "primary",

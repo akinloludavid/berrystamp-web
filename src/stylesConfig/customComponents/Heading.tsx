@@ -31,6 +31,12 @@ export const HeadingStyle = {
       lineHeight: "23px",
       color: "",
     },
+    h5: {
+      fontSize: "16px",
+      fontWeight: "700",
+      lineHeight: "24px",
+      color: "",
+    },
   },
   // default values for `size` and `variant`
   defaultProps: {

@@ -36,10 +36,7 @@ export const ButtonStyles = {
       border: "1px solid #3E2F8A",
       color: "pryColor",
       minWidth: "164px",
-      _hover: {
-        bg: "#E8E8E8",
-        color: "#808080",
-      },
+      _hover: {},
       "@media (max-width:480px)": {
         maxWidth: "279px",
       },

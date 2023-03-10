@@ -23,6 +23,7 @@ import {
   COLLECTION_DETAILS,
   TRACKING,
   TRACKING_DETAILS,
+  SETTINGS,
   NEW_CUSTOM_DESIGN,
 } from "./pathnames";
 
@@ -43,7 +44,7 @@ const Message = WithSuspense(lazy(() => import("../pages/Message")));
 const AuthorDetails = WithSuspense(
   lazy(() => import("../pages/AuthorDetails"))
 );
-
+const SettingsPage = WithSuspense(lazy(() => import("../pages/Settings")));
 const TrackingPage = WithSuspense(lazy(() => import("../pages/Tracking")));
 const TrackingDetailsPage = WithSuspense(
   lazy(() => import("../pages/Tracking/TrackingDetails"))
@@ -65,5 +66,6 @@ export const AppRoutes: IAppRoute[] = [
   { path: COLLECTION_DETAILS, element: <AuthorDetails /> },
   { path: TRACKING, element: <TrackingPage /> },
   { path: TRACKING_DETAILS, element: <TrackingDetailsPage /> },
+  { path: SETTINGS, element: <SettingsPage /> },
   { path: NEW_CUSTOM_DESIGN, element: <NewCustomDesign /> },
 ];
