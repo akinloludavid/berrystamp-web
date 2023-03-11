@@ -17,6 +17,7 @@ import CollectionCard from "../../components/CollectionCard";
 import MainContainer from "../../layout/MainContainer";
 import { collections } from "../../utils/data";
 import CollectionDetails from "./../../components/CollectionDetails";
+import EditProfile from "./EditProfile";
 import NewCollectionModal from "./NewCollectionModal";
 import UploadModal from "./UploadModal";
 
@@ -34,10 +35,17 @@ const DesignerShop = () => {
     onOpen: onOpenNewCol,
     onClose: onCloseNewCol,
   } = useDisclosure();
+  const {
+    isOpen: isEditProfileOpen,
+    onOpen: onOpenEditProfile,
+    onClose: onCloseEditProfile,
+  } = useDisclosure();
   return (
     <MainContainer backgroundColor={"#FAFAFA"} mt={"2rem"}>
       <NewCollectionModal isOpen={isNewColOpen} onClose={onCloseNewCol} />
       <UploadModal isOpen={isUploadOpen} onClose={onCloseUpload} />
+      <EditProfile isOpen={isEditProfileOpen} onClose={onCloseEditProfile} />
+
       <Box position={"relative"}>
         <Image src="/assets/header-img.png" w={["100%"]} h={["164.2px"]} />
         <Image
@@ -102,7 +110,14 @@ const DesignerShop = () => {
               Illustration art Animation, Texture art, Line art, Fantasy art,
               Fractal art, Creative art, Animal art, creative art, Portrait art.
             </Text>
-            <Text as={Link} to={""} variant={"body2"} color={"#3E2F8A"}>
+            <Text
+              onClick={onOpenEditProfile}
+              borderBottom={"1px solid #3E2F8A"}
+              cursor={"pointer"}
+              variant={"body2"}
+              width="max-content"
+              color={"#3E2F8A"}
+            >
               Edit Shop Profile
             </Text>
           </Box>

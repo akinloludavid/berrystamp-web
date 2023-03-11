@@ -47,7 +47,6 @@ const NewCollectionModal = ({
             <Box>
               Upload Collection Cover{" "}
               <Text variant={"body3"} color={"#FF0022"} mb={"1rem"}>
-                {" "}
                 (Upload Dimensions: 1200px by
                 <br /> 1200px)
               </Text>
