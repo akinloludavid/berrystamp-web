@@ -15,7 +15,7 @@ const AuthorDetails = () => {
     (item) => item.author.toLowerCase() === authorName?.toLowerCase()
   )[0];
   return (
-    <MainContainer width={"80vw"} backgroundColor={"#FAFAFA"}>
+    <MainContainer backgroundColor={"#FAFAFA"}>
       <Flex alignItems={"center"} fontSize={"14px"} pb={"1rem"} pt={"3rem"}>
         Home <BiChevronRight /> {authorName}
         <BiChevronRight /> Design
