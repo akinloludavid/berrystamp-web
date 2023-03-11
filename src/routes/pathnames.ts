@@ -17,3 +17,7 @@ export const EXPLORE = "/explore";
 export const SETTINGS = "/settings";
 export const COLLECTION_DETAILS = "/author/:authorName/:collectionName";
 export const NEW_CUSTOM_DESIGN = "/new-custom-design";
+
+//Printer
+export const PRINTER_SHOP = "/printer-shop";
+export const PRINTER_DASHBOARD = "/printer-dashboard";

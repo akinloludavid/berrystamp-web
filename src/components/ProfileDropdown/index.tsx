@@ -40,7 +40,13 @@ const ProfileDropdown = () => {
     setLocalStorage(BERRY_STAMP_USERKEY, { ...user, role: "designer" });
     setTimeout(() => {
       window.location.reload();
-    }, 2000);
+    }, 1000);
+  };
+  const handleSwitchToPrinter = () => {
+    setLocalStorage(BERRY_STAMP_USERKEY, { ...user, role: "printer" });
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   };
   return (
     <>
@@ -124,7 +130,12 @@ const ProfileDropdown = () => {
             <Icon as={AiOutlineUser} />
             Switch to designer
           </MenuItem>
-          <MenuItem display={"flex"} gap="2" fontSize={"14px"}>
+          <MenuItem
+            display={"flex"}
+            gap="2"
+            fontSize={"14px"}
+            onClick={handleSwitchToPrinter}
+          >
             <Icon as={AiOutlineUser} />
             Switch to printer
           </MenuItem>
