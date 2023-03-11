@@ -23,7 +23,12 @@ const NewCollectionModal = ({
         <Heading variant={"h2"} textAlign={"center"} fontWeight={"700"}>
           New Collection
         </Heading>
-        <Text variant={"body3"} mt={"0.5rem"} textAlign={"center"}>
+        <Text
+          variant={"body3"}
+          mt={"0.5rem"}
+          textAlign={"center"}
+          mb={"2.5rem"}
+        >
           Upload and launch new product collections, Inkprint watermark will be
           automatically added to every image upload to protect it. Learn more
         </Text>
