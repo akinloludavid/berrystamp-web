@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { nanoid } from "nanoid";
 import React, { useState } from "react";
 import { RiAtLine } from "react-icons/ri";
@@ -9,14 +17,20 @@ import CollectionCard from "../../components/CollectionCard";
 import MainContainer from "../../layout/MainContainer";
 import { collections } from "../../utils/data";
 import CollectionDetails from "./../../components/CollectionDetails";
+import NewCollectionModal from "./NewCollectionModal";
 
 const DesignerShop = () => {
   const [activetab, setActiveTab] = useState(0);
   const { collectionName } = useParams();
   const navigate = useNavigate();
-
+  const {
+    isOpen: isNewColOpen,
+    onOpen: onOpenNewCol,
+    onClose: onCloseNewCol,
+  } = useDisclosure();
   return (
     <MainContainer backgroundColor={"#FAFAFA"} mt={"2rem"}>
+      <NewCollectionModal isOpen={isNewColOpen} onClose={onCloseNewCol} />
       <Box position={"relative"}>
         <Image src="/assets/header-img.png" w={["100%"]} h={["164.2px"]} />
         <Image
@@ -96,6 +110,7 @@ const DesignerShop = () => {
               color={"#3E2F8A"}
               width={"10.75rem"}
               border={"1px solid #3E2F8A"}
+              onClick={onOpenNewCol}
             >
               Create Collection
             </Button>
