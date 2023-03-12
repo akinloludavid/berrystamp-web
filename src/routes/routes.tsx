@@ -6,6 +6,9 @@ import Register from "../pages/Auth/Register";
 import MobileRegister from "../pages/Auth/Register/MobileRegister";
 import CustomDesign from "../pages/CustomDesign";
 import NewCustomDesign from "../pages/CustomDesign/NewCustomDesign";
+import DesignerDashboard from "../pages/DesignerDashboard";
+import DesignerShop from "../pages/DesignerDashboard/DesignerShop";
+import Payment from "../pages/DesignerDashboard/Payment";
 import { IAppRoute } from "../types";
 import {
   DESIGN_DETAILS,
@@ -25,6 +28,9 @@ import {
   TRACKING_DETAILS,
   SETTINGS,
   NEW_CUSTOM_DESIGN,
+  DESIGNER_DASHBOARD,
+  DESIGNER_SHOP,
+  DESIGNER_PAYMENT,
 } from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
@@ -68,4 +74,7 @@ export const AppRoutes: IAppRoute[] = [
   { path: TRACKING_DETAILS, element: <TrackingDetailsPage /> },
   { path: SETTINGS, element: <SettingsPage /> },
   { path: NEW_CUSTOM_DESIGN, element: <NewCustomDesign /> },
+  { path: DESIGNER_DASHBOARD, element: <DesignerDashboard /> },
+  { path: DESIGNER_SHOP, element: <DesignerShop /> },
+  { path: DESIGNER_PAYMENT, element: <Payment /> },
 ];
