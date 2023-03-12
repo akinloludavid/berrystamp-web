@@ -221,8 +221,8 @@ const DesignerDashboard = () => {
               px={0}
               outline={"none"}
             >
-              <option value="option1">Monthly</option>
-              <option value="option1">Daily</option>
+              <option value="monthly">Monthly</option>
+              <option value="daily">Daily</option>
             </Select>
           </Flex>
           <BarChart />
