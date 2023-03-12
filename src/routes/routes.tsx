@@ -70,7 +70,7 @@ const DesignerDashboard = WithSuspense(
   lazy(() => import("../pages/DesignerDashboard"))
 );
 const DesignerShop = WithSuspense(
-  lazy(() => import("../pages/DesignerDashboard/DesignerShop"))
+  lazy(() => import("../pages/DesignerDashboard/Shop"))
 );
 const Payment = WithSuspense(
   lazy(() => import("../pages/DesignerDashboard/Payment"))

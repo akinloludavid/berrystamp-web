@@ -8,23 +8,24 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { nanoid } from "nanoid";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiAtLine } from "react-icons/ri";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import ArtistCollection from "../../components/ArtistCollection";
-import ArtistDesign from "../../components/ArtistDesign";
-import CollectionCard from "../../components/CollectionCard";
-import MainContainer from "../../layout/MainContainer";
-import { collections } from "../../utils/data";
-import CollectionDetails from "./../../components/CollectionDetails";
-import EditProfile from "./EditProfile";
-import NewCollectionModal from "./NewCollectionModal";
-import UploadModal from "./UploadModal";
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
+import CollectionCard from "../../../components/CollectionCard";
+import MainContainer from "../../../layout/MainContainer";
+import EditProfile from "../EditProfile";
+import NewCollectionModal from "../NewCollectionModal";
+import UploadModal from "../UploadModal";
+import Designs from "./Designs";
+import Collection from "./Collection";
 
 const DesignerShop = () => {
   const [activetab, setActiveTab] = useState(0);
-  const { collectionName } = useParams();
-  const navigate = useNavigate();
   const {
     isOpen: isUploadOpen,
     onOpen: onOpenUpload,
@@ -40,8 +41,16 @@ const DesignerShop = () => {
     onOpen: onOpenEditProfile,
     onClose: onCloseEditProfile,
   } = useDisclosure();
+  const navigate = useNavigate();
+  const [searchParam] = useSearchParams();
+  const currentStep = searchParam.get("tab") || null;
+
+  useEffect(() => {
+    if (currentStep == "Collection") setActiveTab(1);
+  }, [currentStep]);
+
   return (
-    <MainContainer backgroundColor={"#FAFAFA"} mt={"2rem"}>
+    <MainContainer backgroundColor={"#FAFAFA"} mt={"2rem"} mb={"5rem"}>
       <NewCollectionModal isOpen={isNewColOpen} onClose={onCloseNewCol} />
       <UploadModal isOpen={isUploadOpen} onClose={onCloseUpload} />
       <EditProfile isOpen={isEditProfileOpen} onClose={onCloseEditProfile} />
@@ -158,37 +167,16 @@ const DesignerShop = () => {
             cursor={"pointer"}
             borderBottom={"2px solid"}
             borderBottomColor={index == activetab ? "#3E2F8A" : "transparent"}
-            onClick={() => setActiveTab(index)}
+            onClick={() => {
+              setActiveTab(index);
+              navigate(`?tab=${tab}`);
+            }}
           >
             {tab}
           </Text>
         ))}
       </Flex>
-      {activetab == 0 ? (
-        <ArtistDesign />
-      ) : (
-        <>
-          {collectionName ? (
-            <>
-              <CollectionDetails />
-            </>
-          ) : (
-            <Flex flexWrap={"wrap"} gap={[3]} pb={"14.9rem"}>
-              {collections.map((el) => (
-                <Box
-                  onClick={() => {
-                    navigate(`/author/shemzy/${el.title}`);
-                  }}
-                  cursor={"pointer"}
-                  key={nanoid()}
-                >
-                  <CollectionCard {...el} />
-                </Box>
-              ))}
-            </Flex>
-          )}
-        </>
-      )}
+      {activetab == 0 ? <Designs /> : <Collection />}
     </MainContainer>
   );
 };

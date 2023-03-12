@@ -5,6 +5,7 @@ import {
   CheckboxGroup,
   Flex,
   Grid,
+  Image,
   Input,
   Select,
   Text,
@@ -38,17 +39,50 @@ const EditProfile = ({
   ];
   return (
     <ModalContainer isOpen={isOpen} onClose={onClose} maxWidth="47rem">
-      <Box height={"39.9rem"} borderRadius={"10px"} bg={"white"} pt={"2rem"}>
+      <Box
+        height={"39.9rem"}
+        borderRadius={"10px"}
+        bg={"white"}
+        py={"2rem"}
+        overflowY={"auto"}
+      >
         <Flex
           alignItems={"center"}
           justifyContent={"space-between"}
           mx="1.3rem"
+          mb={"1rem"}
         >
           <Text variant={"body4"} fontWeight={"700"}>
             Edit Profile
           </Text>
           <Button width={"5rem"}>Save</Button>
         </Flex>
+        <Flex
+          height={"13rem"}
+          mx={"0.25rem"}
+          bg={"#C9C9C9"}
+          alignItems={"center"}
+          position={"relative"}
+          justifyContent={"center"}
+          mb={"5.125rem"}
+        >
+          <Image src="/assets/vectors/camera.svg" />
+          <Flex
+            position={"absolute"}
+            width={"7rem"}
+            height={"7rem"}
+            borderRadius={"full"}
+            bg={"#C9C9C9"}
+            border="5px solid white"
+            left={"21px"}
+            bottom={"-3.5rem"}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <Image src="/assets/vectors/camera.svg" />
+          </Flex>
+        </Flex>
+
         <Box px={"1.5rem"}>
           <Text variant={"body3"} fontWeight={"600"}>
             Shop Name
@@ -71,7 +105,7 @@ const EditProfile = ({
             >
               {items.map((el) => (
                 <Checkbox key={nanoid()} colorScheme="purple" value={el}>
-                  {el}
+                  <Text variant={"body3"}> {el}</Text>
                 </Checkbox>
               ))}
             </Grid>

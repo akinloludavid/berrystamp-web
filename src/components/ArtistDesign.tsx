@@ -22,7 +22,7 @@ const ArtistDesign = () => {
               <Box px={["16px"]} py={["22.5px"]}>
                 <Text variant={"body3"}>{el.description}</Text>
                 <Text variant={"body3"} color="#757575" mb="12px">
-                  by{" "}
+                  by
                   <Text color="#0050BA" variant={"body3"} as="span">
                     {el.author}
                   </Text>
