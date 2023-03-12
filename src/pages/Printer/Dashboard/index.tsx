@@ -9,12 +9,18 @@ import {
   Heading,
   Icon,
   Image,
+  Select,
   Text,
 } from "@chakra-ui/react";
-import { FaCheck, FaChevronDown, FaStar, FaTimes } from "react-icons/fa";
+import { FaCheck, FaStar, FaTimes } from "react-icons/fa";
 import { MdAccountBalanceWallet, MdSpeed } from "react-icons/md";
 import { IoMdBasket } from "react-icons/io";
+import DonutChart from "../../../components/charts/DonutChart";
+import BarChart from "../../../components/charts/BarChart";
+import { useNavigate } from "react-router-dom";
+import { PRINTER_PAYMENT } from "../../../routes/pathnames";
 const PrinterDashboard = () => {
+  const navigate = useNavigate();
   return (
     <Flex flexDir={"column"} gap="24px" pt="40px" px="96px">
       <Grid templateColumns={["repeat(4,1fr)"]} gap="12px">
@@ -373,25 +379,76 @@ const PrinterDashboard = () => {
       </Grid>
       <Grid mb="133px" templateColumns="repeat(2,1fr)" gap="12px">
         <GridItem>
-          <Box py="26px" px="20px" bgColor={"#291F5C0F"} borderRadius="8px">
+          <Box
+            h="380px"
+            py="26px"
+            px="20px"
+            bgColor={"#291F5C0F"}
+            borderRadius="8px"
+          >
             <Flex justify={"space-between"} align="center">
               <Text fontSize={"16px"} fontWeight="600" color="textColor">
                 Overall Payment Status
               </Text>
-              <Button>Payment History</Button>
+              <Button onClick={() => navigate(PRINTER_PAYMENT)}>
+                Payment History
+              </Button>
             </Flex>
+            <Grid
+              gridTemplateColumns={"1fr 1fr"}
+              gap={"0.5.625rem"}
+              alignItems={"center"}
+            >
+              <DonutChart />
+              <GridItem>
+                {[
+                  { label: "Pending payment status", color: "#FF0022" },
+                  {
+                    label: "Paid payment status",
+                    color: "#3E2F8A",
+                  },
+                  { label: "Cancelled payment status", color: "#F9A70D" },
+                ].map((el) => (
+                  <Flex alignItems={"center"} gap={"0.75rem"} mb={"1.625rem"}>
+                    <Box bg={el.color} width={"2.5rem"} height={"0.5rem"} />
+                    <Text
+                      variant={"body4"}
+                      fontSize={"0.75rem"}
+                      fontWeight={"500"}
+                    >
+                      {el.label}
+                    </Text>
+                  </Flex>
+                ))}
+              </GridItem>
+            </Grid>
           </Box>
         </GridItem>
         <GridItem>
-          <Box py="26px" px="20px" bgColor={"#291F5C0F"} borderRadius="8px">
+          <Box
+            h="380px"
+            py="26px"
+            px="20px"
+            bgColor={"#291F5C0F"}
+            borderRadius="8px"
+          >
             <Flex justify={"space-between"} align="center">
               <Text fontSize={"16px"} fontWeight="600" color="textColor">
                 Account Overview
               </Text>
-              <Button bg="#291F5C26" rightIcon={<FaChevronDown />}>
-                Monthly
-              </Button>
+              <Select
+                width={"6.1rem"}
+                borderRadius={"110px"}
+                bg={" rgba(41, 31, 92, 0.15)"}
+                fontSize={"12px"}
+                px={0}
+                outline={"none"}
+              >
+                <option value="monthly">Monthly</option>
+                <option value="daily">Daily</option>
+              </Select>
             </Flex>
+            <BarChart />
           </Box>
         </GridItem>
       </Grid>

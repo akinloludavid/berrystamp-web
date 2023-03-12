@@ -1,14 +1,6 @@
 import { lazy } from "react";
 import WithSuspense from "../components/WithSuspense";
-import Login from "../pages/Auth/Login";
-import MobileLogin from "../pages/Auth/MobileLogin";
-import Register from "../pages/Auth/Register";
-import MobileRegister from "../pages/Auth/Register/MobileRegister";
-import CustomDesign from "../pages/CustomDesign";
-import NewCustomDesign from "../pages/CustomDesign/NewCustomDesign";
-import DesignerDashboard from "../pages/DesignerDashboard";
-import DesignerShop from "../pages/DesignerDashboard/DesignerShop";
-import Payment from "../pages/DesignerDashboard/Payment";
+
 import { IAppRoute } from "../types";
 import {
   DESIGN_DETAILS,
@@ -33,6 +25,7 @@ import {
   DESIGNER_DASHBOARD,
   DESIGNER_SHOP,
   DESIGNER_PAYMENT,
+  PRINTER_PAYMENT,
 } from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
@@ -66,6 +59,25 @@ const PrinterShopPage = WithSuspense(
 const PrinterDashboardPage = WithSuspense(
   lazy(() => import("../pages/Printer/Dashboard"))
 );
+const MobileRegister = WithSuspense(
+  lazy(() => import("../pages/Auth/Register/MobileRegister"))
+);
+const CustomDesign = WithSuspense(lazy(() => import("../pages/CustomDesign")));
+const NewCustomDesign = WithSuspense(
+  lazy(() => import("../pages/CustomDesign/NewCustomDesign"))
+);
+const DesignerDashboard = WithSuspense(
+  lazy(() => import("../pages/DesignerDashboard"))
+);
+const DesignerShop = WithSuspense(
+  lazy(() => import("../pages/DesignerDashboard/DesignerShop"))
+);
+const Payment = WithSuspense(
+  lazy(() => import("../pages/DesignerDashboard/Payment"))
+);
+const MobileLogin = WithSuspense(
+  lazy(() => import("../pages/Auth/MobileLogin"))
+);
 
 export const AppRoutes: IAppRoute[] = [
   { path: HOME, element: <HomePage /> },
@@ -88,7 +100,8 @@ export const AppRoutes: IAppRoute[] = [
   //Printer
   { path: PRINTER_SHOP, element: <PrinterShopPage /> },
   { path: PRINTER_DASHBOARD, element: <PrinterDashboardPage /> },
-  
+  { path: PRINTER_PAYMENT, element: <Payment /> },
+
   //Designer
   { path: DESIGNER_DASHBOARD, element: <DesignerDashboard /> },
   { path: DESIGNER_SHOP, element: <DesignerShop /> },

@@ -26,4 +26,4 @@ export const DESIGNER_PAYMENT = "/designer/payment";
 //Printer
 export const PRINTER_SHOP = "/printer-shop";
 export const PRINTER_DASHBOARD = "/printer-dashboard";
-
+export const PRINTER_PAYMENT = "/printer/payment";
