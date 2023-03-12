@@ -152,7 +152,7 @@ const HomePage = () => {
           columnGap="24px"
         >
           {recentDesigns.map((el) => (
-            <Link to={"/explore"}>
+            <Link to={"/explore"} key={nanoid()}>
               <GridItem
                 key={nanoid()}
                 mx={["auto", "auto", "0"]}

@@ -1,10 +1,6 @@
 import { lazy } from "react";
 import WithSuspense from "../components/WithSuspense";
-import Login from "../pages/Auth/Login";
-import MobileLogin from "../pages/Auth/MobileLogin";
-import Register from "../pages/Auth/Register";
-import MobileRegister from "../pages/Auth/Register/MobileRegister";
-import CustomDesign from "../pages/CustomDesign";
+
 import { IAppRoute } from "../types";
 import {
   DESIGN_DETAILS,
@@ -22,6 +18,14 @@ import {
   COLLECTION_DETAILS,
   TRACKING,
   TRACKING_DETAILS,
+  SETTINGS,
+  NEW_CUSTOM_DESIGN,
+  PRINTER_SHOP,
+  PRINTER_DASHBOARD,
+  DESIGNER_DASHBOARD,
+  DESIGNER_SHOP,
+  DESIGNER_PAYMENT,
+  PRINTER_PAYMENT,
 } from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
@@ -41,10 +45,32 @@ const Message = WithSuspense(lazy(() => import("../pages/Message")));
 const AuthorDetails = WithSuspense(
   lazy(() => import("../pages/AuthorDetails"))
 );
-
+const SettingsPage = WithSuspense(lazy(() => import("../pages/Settings")));
 const TrackingPage = WithSuspense(lazy(() => import("../pages/Tracking")));
 const TrackingDetailsPage = WithSuspense(
   lazy(() => import("../pages/Tracking/TrackingDetails"))
+);
+
+//Printer
+const PrinterShopPage = WithSuspense(
+  lazy(() => import("../pages/Printer/Shop"))
+);
+
+const PrinterDashboardPage = WithSuspense(
+  lazy(() => import("../pages/Printer/Dashboard"))
+);
+const MobileRegister = WithSuspense(
+  lazy(() => import("../pages/Auth/Register/MobileRegister"))
+);
+const CustomDesign = WithSuspense(lazy(() => import("../pages/CustomDesign")));
+const NewCustomDesign = WithSuspense(
+  lazy(() => import("../pages/CustomDesign/NewCustomDesign"))
+);
+const DesignerDashboard = WithSuspense(lazy(() => import("../pages/Designer")));
+const DesignerShop = WithSuspense(lazy(() => import("../pages/Designer/Shop")));
+const Payment = WithSuspense(lazy(() => import("../pages/Designer/Payment")));
+const MobileLogin = WithSuspense(
+  lazy(() => import("../pages/Auth/MobileLogin"))
 );
 
 export const AppRoutes: IAppRoute[] = [
@@ -63,4 +89,15 @@ export const AppRoutes: IAppRoute[] = [
   { path: COLLECTION_DETAILS, element: <AuthorDetails /> },
   { path: TRACKING, element: <TrackingPage /> },
   { path: TRACKING_DETAILS, element: <TrackingDetailsPage /> },
+  { path: SETTINGS, element: <SettingsPage /> },
+  { path: NEW_CUSTOM_DESIGN, element: <NewCustomDesign /> },
+  //Printer
+  { path: PRINTER_SHOP, element: <PrinterShopPage /> },
+  { path: PRINTER_DASHBOARD, element: <PrinterDashboardPage /> },
+  { path: PRINTER_PAYMENT, element: <Payment /> },
+
+  //Designer
+  { path: DESIGNER_DASHBOARD, element: <DesignerDashboard /> },
+  { path: DESIGNER_SHOP, element: <DesignerShop /> },
+  { path: DESIGNER_PAYMENT, element: <Payment /> },
 ];

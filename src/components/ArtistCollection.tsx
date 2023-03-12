@@ -1,4 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
+import { nanoid } from "nanoid";
 import React, { Fragment } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { collections } from "../utils/data";
@@ -21,6 +22,7 @@ const ArtistCollection = () => {
             <Box
               onClick={() => navigate(`/author/${authorName}/${el.title}`)}
               cursor={"pointer"}
+              key={nanoid()}
             >
               <CollectionCard {...el} />
             </Box>

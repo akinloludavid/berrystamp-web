@@ -6,7 +6,7 @@ export const FormLabelStyle = {
   variants: {
     primary: {
       fontSize: "14px",
-      fontWeight: "400",
+      fontWeight: "600",
       lineHeight: "18px",
       color: "#323232",
     },

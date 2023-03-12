@@ -14,4 +14,16 @@ export const ON_DEMAND_PRINTER = "/printer";
 export const DESIGN_DETAILS = "/design/:designName";
 export const AUTHOR_DETAILS = "/author/:authorName";
 export const EXPLORE = "/explore";
+export const SETTINGS = "/settings";
 export const COLLECTION_DETAILS = "/author/:authorName/:collectionName";
+export const NEW_CUSTOM_DESIGN = "/new-custom-design";
+
+//Designer
+export const DESIGNER_DASHBOARD = "/designer/dashboard";
+export const DESIGNER_SHOP = "/designer/shop";
+export const DESIGNER_PAYMENT = "/designer/payment";
+
+//Printer
+export const PRINTER_SHOP = "/printer-shop";
+export const PRINTER_DASHBOARD = "/printer-dashboard";
+export const PRINTER_PAYMENT = "/printer/payment";

@@ -6,4 +6,5 @@ export const colors = {
   secColor: "#5a698f",
   white: "#ffffff",
   danger: "#FF0022",
+  success: "#339900",
 };

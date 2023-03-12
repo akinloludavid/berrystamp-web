@@ -24,7 +24,7 @@ import {
   getFilteredObjects,
   getLocalStorage,
 } from "../../utils/helper";
-import { myOrders } from "./data";
+import { myOrders, printerOrders } from "./data";
 import OrderDetails from "./OrderDetails";
 
 const orderStatuses = [
@@ -92,7 +92,10 @@ const Orders = () => {
   const [orderStatus, setOrderStatus] = useState("");
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [orderDetails, setOrderDetails] = useState(null);
-  const filteredOrders = getFilteredObjects(myOrders, orderStatus);
+  const filteredOrders =
+    user?.role === "printer"
+      ? getFilteredObjects(printerOrders, orderStatus)
+      : getFilteredObjects(myOrders, orderStatus);
   const handleOpenOrderDetails = (data: any) => {
     setIsDetailsOpen(true);
   };
@@ -118,6 +121,7 @@ const Orders = () => {
               <Flex gap="8">
                 {orderStatuses.map((el) => (
                   <Box
+                    key={nanoid()}
                     position={"relative"}
                     cursor={"pointer"}
                     onClick={() => setOrderStatus(el.value)}
@@ -172,6 +176,7 @@ const Orders = () => {
                       fontWeight="500"
                       color="black"
                       textTransform={"capitalize"}
+                      key={nanoid()}
                     >
                       {item}
                     </Th>

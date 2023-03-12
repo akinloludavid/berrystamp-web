@@ -15,7 +15,7 @@ const AuthorDetails = () => {
     (item) => item.author.toLowerCase() === authorName?.toLowerCase()
   )[0];
   return (
-    <Box width={"80vw"} backgroundColor={"#FAFAFA"}>
+    <MainContainer backgroundColor={"#FAFAFA"}>
       <Flex alignItems={"center"} fontSize={"14px"} pb={"1rem"} pt={"3rem"}>
         Home <BiChevronRight /> {authorName}
         <BiChevronRight /> Design
@@ -113,6 +113,7 @@ const AuthorDetails = () => {
       >
         {["Design", "Collection"].map((tab, index) => (
           <Text
+            key={tab}
             color={index == activetab ? "#3E2F8A" : "gray"}
             pb={"0.5rem"}
             cursor={"pointer"}
@@ -125,7 +126,7 @@ const AuthorDetails = () => {
         ))}
       </Flex>
       {activetab == 0 ? <ArtistDesign /> : <ArtistCollection />}
-    </Box>
+    </MainContainer>
   );
 };
 

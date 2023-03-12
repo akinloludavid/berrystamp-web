@@ -2,6 +2,8 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ExploreCarousel from "./carousels/ExploreCarousel";
+import LoginText from "./LoginText";
+import RegisterText from "./RegisterText";
 
 const NoMessage = () => {
   const navigate = useNavigate();
@@ -17,21 +19,9 @@ const NoMessage = () => {
       >
         <Image src="/assets/gifs/chat.gif" />
         <Text variant={"body2"} fontWeight={"500"} mb={"13.1875rem"}>
-          No messages found.{" "}
-          <span
-            onClick={() => navigate("/login")}
-            style={{ color: "#0050BA", cursor: "pointer" }}
-          >
-            Login
-          </span>{" "}
+          No messages found. <LoginText />
           or
-          <span
-            onClick={() => navigate("/register")}
-            style={{ color: "#0050BA", cursor: "pointer" }}
-          >
-            {" "}
-            create
-          </span>{" "}
+          <RegisterText />
           an account to see all messages
         </Text>
       </Flex>

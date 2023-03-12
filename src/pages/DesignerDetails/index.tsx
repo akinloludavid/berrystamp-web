@@ -111,6 +111,7 @@ const DesignerDetails = () => {
           <Flex gap="12px">
             {products.map((img) => (
               <Image
+                key={nanoid()}
                 w={["63.39px"]}
                 height={"63.39px"}
                 src={`/assets/riri/${img}`}
@@ -141,6 +142,7 @@ const DesignerDetails = () => {
                 </Text>
                 {colors.map((el, index) => (
                   <Box
+                    key={nanoid()}
                     borderRadius={activeColor == index ? "4px" : "0"}
                     width={"2rem"}
                     height={"2rem"}
@@ -177,6 +179,7 @@ const DesignerDetails = () => {
                     borderColor={activesize == index ? "red" : "#C9C9C9"}
                     cursor={"pointer"}
                     onClick={() => setactivesize(index)}
+                    key={nanoid()}
                   >
                     {el}
                   </Flex>
