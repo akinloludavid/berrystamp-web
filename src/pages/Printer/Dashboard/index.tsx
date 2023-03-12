@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Button,
@@ -10,10 +11,9 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
-import { FaChevronDown } from "react-icons/fa";
-import { MdSpeed } from "react-icons/md";
-
+import { FaCheck, FaChevronDown, FaStar, FaTimes } from "react-icons/fa";
+import { MdAccountBalanceWallet, MdSpeed } from "react-icons/md";
+import { IoMdBasket } from "react-icons/io";
 const PrinterDashboard = () => {
   return (
     <Flex flexDir={"column"} gap="24px" pt="40px" px="96px">
@@ -154,13 +154,13 @@ const PrinterDashboard = () => {
             <Heading color="white" variant={"h2"} fontWeight="700" mb="8">
               Falcon Prints
             </Heading>
-            <Flex align={"center"} mb="24px">
+            <Flex align={"center"} mb="24px" gap="4px">
               <Text color="#D8D5E8" variant={"body4"}>
                 Verified account
               </Text>
               <Image src="/assets/verified.svg" />
             </Flex>
-            <Flex justify={"space-between"}>
+            <Flex w="full" justify={"space-between"} px="40px">
               <Box display={"flex"} alignItems="center" flexDir={"column"}>
                 <Heading variant={"h3"} as="h3" color="white" mb="8px">
                   ₦200k
@@ -220,7 +220,10 @@ const PrinterDashboard = () => {
               rounded="full"
               display={"flex"}
               justifyContent="center"
-            ></Box>
+              alignItems="center"
+            >
+              <IoMdBasket color="white" />
+            </Box>
           </Flex>
         </GridItem>
         <GridItem>
@@ -253,7 +256,10 @@ const PrinterDashboard = () => {
               rounded="full"
               display={"flex"}
               justifyContent="center"
-            ></Box>
+              alignItems="center"
+            >
+              <MdAccountBalanceWallet color="white" />
+            </Box>
           </Flex>
         </GridItem>
         <GridItem>
@@ -286,7 +292,10 @@ const PrinterDashboard = () => {
               rounded="full"
               display={"flex"}
               justifyContent="center"
-            ></Box>
+              alignItems="center"
+            >
+              <FaStar color="white" />
+            </Box>
           </Flex>
         </GridItem>
         <GridItem>
@@ -319,7 +328,10 @@ const PrinterDashboard = () => {
               rounded="full"
               display={"flex"}
               justifyContent="center"
-            ></Box>
+              alignItems="center"
+            >
+              <FaCheck color="white" />
+            </Box>
           </Flex>
         </GridItem>
         <GridItem>
@@ -352,7 +364,10 @@ const PrinterDashboard = () => {
               rounded="full"
               display={"flex"}
               justifyContent="center"
-            ></Box>
+              alignItems="center"
+            >
+              <FaTimes color="white" />
+            </Box>
           </Flex>
         </GridItem>
       </Grid>
