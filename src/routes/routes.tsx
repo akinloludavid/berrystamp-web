@@ -66,15 +66,9 @@ const CustomDesign = WithSuspense(lazy(() => import("../pages/CustomDesign")));
 const NewCustomDesign = WithSuspense(
   lazy(() => import("../pages/CustomDesign/NewCustomDesign"))
 );
-const DesignerDashboard = WithSuspense(
-  lazy(() => import("../pages/DesignerDashboard"))
-);
-const DesignerShop = WithSuspense(
-  lazy(() => import("../pages/DesignerDashboard/Shop"))
-);
-const Payment = WithSuspense(
-  lazy(() => import("../pages/DesignerDashboard/Payment"))
-);
+const DesignerDashboard = WithSuspense(lazy(() => import("../pages/Designer")));
+const DesignerShop = WithSuspense(lazy(() => import("../pages/Designer/Shop")));
+const Payment = WithSuspense(lazy(() => import("../pages/Designer/Payment")));
 const MobileLogin = WithSuspense(
   lazy(() => import("../pages/Auth/MobileLogin"))
 );

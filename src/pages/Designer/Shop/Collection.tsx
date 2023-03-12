@@ -23,7 +23,6 @@ const Collection = () => {
 
   const [searchParam] = useSearchParams();
   const collectionName = searchParam.get("collectionName") || null;
-  console.log(collectionName);
   return (
     <>
       {collectionName ? (
