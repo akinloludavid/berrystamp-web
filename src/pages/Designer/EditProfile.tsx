@@ -14,6 +14,7 @@ import {
 import { nanoid } from "nanoid";
 import React from "react";
 import ModalContainer from "../../components/ModalContainer";
+import UploadFile from "../../components/UploadFile";
 
 const EditProfile = ({
   isOpen,
@@ -66,7 +67,9 @@ const EditProfile = ({
           justifyContent={"center"}
           mb={"5.125rem"}
         >
-          <Image src="/assets/vectors/camera.svg" />
+          <UploadFile>
+            <Image src="/assets/vectors/camera.svg" />
+          </UploadFile>
           <Flex
             position={"absolute"}
             width={"7rem"}
@@ -79,7 +82,9 @@ const EditProfile = ({
             alignItems={"center"}
             justifyContent={"center"}
           >
-            <Image src="/assets/vectors/camera.svg" />
+            <UploadFile>
+              <Image src="/assets/vectors/camera.svg" />
+            </UploadFile>
           </Flex>
         </Flex>
 
