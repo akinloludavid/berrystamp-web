@@ -7,6 +7,8 @@ import {
   MESSAGE,
   ORDERS,
   PRINTER,
+  PRINTER_DASHBOARD,
+  PRINTER_SHOP,
   TRACKING,
 } from "../../routes/pathnames";
 export const designerNavlinks = [
@@ -18,6 +20,34 @@ export const designerNavlinks = [
   {
     label: "My Shop",
     route: DESIGNER_SHOP,
+  },
+  {
+    label: "Orders",
+    route: ORDERS,
+  },
+  {
+    label: "Message",
+    route: MESSAGE,
+  },
+  {
+    label: "Sell your design",
+    route: "/sell-your-design",
+  },
+
+  {
+    label: "On-demand printer",
+    route: PRINTER,
+  },
+];
+export const printerNavlinks = [
+  { label: "Home", route: HOME },
+  {
+    label: "Dashboard Overview",
+    route: PRINTER_DASHBOARD,
+  },
+  {
+    label: "My Shop",
+    route: PRINTER_SHOP,
   },
   {
     label: "Orders",

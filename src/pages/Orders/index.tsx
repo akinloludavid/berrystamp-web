@@ -24,7 +24,7 @@ import {
   getFilteredObjects,
   getLocalStorage,
 } from "../../utils/helper";
-import { myOrders } from "./data";
+import { myOrders, printerOrders } from "./data";
 import OrderDetails from "./OrderDetails";
 
 const orderStatuses = [
@@ -92,7 +92,10 @@ const Orders = () => {
   const [orderStatus, setOrderStatus] = useState("");
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [orderDetails, setOrderDetails] = useState(null);
-  const filteredOrders = getFilteredObjects(myOrders, orderStatus);
+  const filteredOrders =
+    user?.role === "printer"
+      ? getFilteredObjects(printerOrders, orderStatus)
+      : getFilteredObjects(myOrders, orderStatus);
   const handleOpenOrderDetails = (data: any) => {
     setIsDetailsOpen(true);
   };

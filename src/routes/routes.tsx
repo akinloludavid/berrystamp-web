@@ -28,6 +28,8 @@ import {
   TRACKING_DETAILS,
   SETTINGS,
   NEW_CUSTOM_DESIGN,
+  PRINTER_SHOP,
+  PRINTER_DASHBOARD,
   DESIGNER_DASHBOARD,
   DESIGNER_SHOP,
   DESIGNER_PAYMENT,
@@ -56,6 +58,15 @@ const TrackingDetailsPage = WithSuspense(
   lazy(() => import("../pages/Tracking/TrackingDetails"))
 );
 
+//Printer
+const PrinterShopPage = WithSuspense(
+  lazy(() => import("../pages/Printer/Shop"))
+);
+
+const PrinterDashboardPage = WithSuspense(
+  lazy(() => import("../pages/Printer/Dashboard"))
+);
+
 export const AppRoutes: IAppRoute[] = [
   { path: HOME, element: <HomePage /> },
   { path: SELL_LANDING_PAGE, element: <SellYourDesignPage /> },
@@ -74,6 +85,11 @@ export const AppRoutes: IAppRoute[] = [
   { path: TRACKING_DETAILS, element: <TrackingDetailsPage /> },
   { path: SETTINGS, element: <SettingsPage /> },
   { path: NEW_CUSTOM_DESIGN, element: <NewCustomDesign /> },
+  //Printer
+  { path: PRINTER_SHOP, element: <PrinterShopPage /> },
+  { path: PRINTER_DASHBOARD, element: <PrinterDashboardPage /> },
+  
+  //Designer
   { path: DESIGNER_DASHBOARD, element: <DesignerDashboard /> },
   { path: DESIGNER_SHOP, element: <DesignerShop /> },
   { path: DESIGNER_PAYMENT, element: <Payment /> },
