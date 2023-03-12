@@ -6,6 +6,9 @@ import Register from "../pages/Auth/Register";
 import MobileRegister from "../pages/Auth/Register/MobileRegister";
 import CustomDesign from "../pages/CustomDesign";
 import NewCustomDesign from "../pages/CustomDesign/NewCustomDesign";
+import DesignerDashboard from "../pages/DesignerDashboard";
+import DesignerShop from "../pages/DesignerDashboard/DesignerShop";
+import Payment from "../pages/DesignerDashboard/Payment";
 import { IAppRoute } from "../types";
 import {
   DESIGN_DETAILS,
@@ -27,6 +30,9 @@ import {
   NEW_CUSTOM_DESIGN,
   PRINTER_SHOP,
   PRINTER_DASHBOARD,
+  DESIGNER_DASHBOARD,
+  DESIGNER_SHOP,
+  DESIGNER_PAYMENT,
 } from "./pathnames";
 
 const HomePage = WithSuspense(lazy(() => import("../pages/Home")));
@@ -82,4 +88,9 @@ export const AppRoutes: IAppRoute[] = [
   //Printer
   { path: PRINTER_SHOP, element: <PrinterShopPage /> },
   { path: PRINTER_DASHBOARD, element: <PrinterDashboardPage /> },
+  
+  //Designer
+  { path: DESIGNER_DASHBOARD, element: <DesignerDashboard /> },
+  { path: DESIGNER_SHOP, element: <DesignerShop /> },
+  { path: DESIGNER_PAYMENT, element: <Payment /> },
 ];

@@ -18,6 +18,12 @@ export const SETTINGS = "/settings";
 export const COLLECTION_DETAILS = "/author/:authorName/:collectionName";
 export const NEW_CUSTOM_DESIGN = "/new-custom-design";
 
+//Designer
+export const DESIGNER_DASHBOARD = "/designer/dashboard";
+export const DESIGNER_SHOP = "/designer/shop";
+export const DESIGNER_PAYMENT = "/designer/payment";
+
 //Printer
 export const PRINTER_SHOP = "/printer-shop";
 export const PRINTER_DASHBOARD = "/printer-dashboard";
+

@@ -1,5 +1,7 @@
 import {
   CUSTOM_DESIGN,
+  DESIGNER_DASHBOARD,
+  DESIGNER_SHOP,
   HOME,
   MARKET_PLACE,
   MESSAGE,
@@ -13,11 +15,11 @@ export const designerNavlinks = [
   { label: "Home", route: HOME },
   {
     label: "Dashboard Overview",
-    route: MARKET_PLACE,
+    route: DESIGNER_DASHBOARD,
   },
   {
     label: "My Shop",
-    route: CUSTOM_DESIGN,
+    route: DESIGNER_SHOP,
   },
   {
     label: "Orders",
