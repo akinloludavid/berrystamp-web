@@ -11,7 +11,6 @@ import {
 const Navbar = () => {
   const navigate = useNavigate();
   const user = getLocalStorage(BERRY_STAMP_USERKEY);
-  console.log(user);
   return (
     <Flex
       gap="50px"
